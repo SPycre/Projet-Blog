@@ -5,9 +5,10 @@
         <link href="CSS/header.css" rel="stylesheet"/>
         <link href="CSS/home.css" rel="stylesheet"/>
         <link href="CSS/main.css" rel="stylesheet"/>
+        <link href="CSS/footer.css" rel="stylesheet"/>
     </head>
     <body>
-        <header id="header">
+        <header>
             <?php include("header.html"); ?>
         </header>
         <main>
@@ -24,7 +25,7 @@
             </section>
         </main>
         <footer>
-
+            <?php include("footer.html"); ?>
         </footer>
     </body>
 </html>

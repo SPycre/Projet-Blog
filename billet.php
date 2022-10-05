@@ -9,8 +9,8 @@
 
     </head>
     <body>
-        <header id="header">
-        <!-- ?php include("header.html"); ?--> 
+        <header>
+            <?php include("header.html"); ?>
         </header>
 
 
@@ -32,7 +32,7 @@
 
 
         <footer>
-        <?php include("footer.html"); ?>
+            <?php include("footer.html"); ?>
         </footer>
     </body>
 </html>
