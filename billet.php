@@ -15,9 +15,19 @@
 
 
         <main>
-            <div id = "Billet">
+            
+            <section id = "Billet">
                     
-                </div>
+                </section>
+
+            <section id = "List-comment">
+
+                <article class="comment">
+                </article>
+
+            </section>
+
+
         </main>
 
 
