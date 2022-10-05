@@ -1,0 +1,85 @@
+#Billet{
+        background-color: rgb(235,235,235);
+        margin: 10px 30px;
+        padding: 10px;
+}
+
+#List-comment{
+        height: 250px;
+        background-color: rgb(235,235,235);
+        margin: 10px 30px;
+        padding: 10px;
+}
+
+#text-billet {
+    display: flex;
+    flex-direction: column;
+}
+
+#titre-billet {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 35px;
+    color: black;
+}
+
+#contenu-billet {
+    margin-top: 5px;
+    color: gray;
+}
+
+#billet-article{
+    margin: 10px;
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#add-comment{
+    background-color: rgb(235,235,235);
+    margin: 10px 30px;
+    padding: 10px;
+}
+
+#form-commentaire {
+    flex-direction: column;
+    display: flex;
+    color: black;
+    align-items: center;
+}
+
+#form-commentaire>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+#form-commentaire button {
+    width: 50%;
+}
+
+#comment-pseudo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+#comment-pseudo input {
+    margin-left: 20px;
+}
+
+#comment-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+#comment-content textarea {
+    margin-left: 20px;
+    resize: none;
+}
