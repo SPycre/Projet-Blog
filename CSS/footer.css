@@ -1,0 +1,30 @@
+#footer-bot{
+    background-color: rgb(127, 136, 255);
+    padding: 10px;
+}
+
+p{
+    color:rgb(255, 255, 255);
+}
+
+#hyper-text-footer{
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    font-size: 0.6em;
+    justify-content: center
+}
+
+footer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1{
+    margin-left: 15px;
+    margin-bottom: 0px;
+}
