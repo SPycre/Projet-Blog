@@ -1,0 +1,58 @@
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(121, 163, 255);
+    margin: auto;
+    padding: 10px;
+    font-weight: bold;
+}
+
+#titre-site {
+    display: flex;
+    align-items: center;
+    font-size: 55px;
+    padding-left: 15px;
+}
+
+#titre-page {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-end;
+    font-size: 35px;
+}
+
+header .input-div {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 0px;
+    align-items: center;
+}
+
+header .input-div input {
+    transition-duration:.5s;
+    background-color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 0px;
+    border-radius: 30px;
+}
+
+header input:focus {
+    outline: none;
+    transition-duration:.5s;
+    background-color: rgb(220, 220, 220);
+}
+
+header .input-div button {
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 0px;
+    border-radius: 30px;
+}
+
+header .input-div button:hover {
+    background-color: rgb(220, 220, 220);
+}

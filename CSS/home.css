@@ -1,0 +1,34 @@
+
+#liste-billets {
+    width: 60%;
+    height: 1000px;
+    background-color: rgb(235,235,235);
+    margin: 30px;
+    padding: 10px;
+}
+
+.billet {
+    margin: 10px 10px;
+    background-color: white;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.text-billet {
+    display: flex;
+    flex-direction: column;
+}
+
+.titre-billet {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 35px;
+    color: black;
+}
+
+.contenu-billet {
+    margin-top: 5px;
+    color: gray;
+}
