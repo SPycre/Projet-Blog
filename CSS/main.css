@@ -5,6 +5,12 @@ body {
     color: white;
 }
 
+#central {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
 main {
     display: flex;
     justify-content: center;
