@@ -5,7 +5,7 @@
 		<title></title>
 		<link href="CSS/header.css" rel="stylesheet"/>
 		<link href="CSS/main.css" rel="stylesheet"/>
-		<link href="CreationBillet.css" rel="stylesheet"/>
+		<link href="CSS/CreationBillet.css" rel="stylesheet"/>
 	</head>
 
 	<body>
