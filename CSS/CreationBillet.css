@@ -1,0 +1,20 @@
+body{
+   margin-left: 25%;
+   margin-right: 25%;
+   width: 100%;
+}
+#main{
+    background-color: #D3D3D3;
+    text-align: center;
+    border: solid;
+    width: 50%;
+}
+form{
+    padding: 5px;
+}
+div{
+    padding: 10px;
+}
+textarea {
+  resize: none;
+}
