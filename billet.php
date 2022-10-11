@@ -3,10 +3,14 @@
     <head>
 
         <title> Création de billet </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="Client/billet.js" defer></script>
+
         <link href="CSS/header.css" rel="stylesheet"/>
         <link href="CSS/main.css" rel="stylesheet"/>
         <link href="CSS/footer.css" rel="stylesheet"/>
         <link href="CSS/billet.css" rel="stylesheet"/>
+        
 
     </head>
     <body>
@@ -19,23 +23,23 @@
 
         <section id="central">
             
-            <section id = "Billet">
+            <section id="billet">
 
-            <article id="billet-article">
-                <div id="text-billet">
-                    <span id="titre-billet">Titre</span>
-                    <span id="contenu-billet">Content</span>
-                </div>
+                <article id="billet-article">
+                    <div id="text-billet">
+                        <span id="titre-billet">Titre</span>
+                        <span id="contenu-billet">Content</span>
+                    </div>
 
-                <div id="detail-billet">
-                    <!-- Bouton options pour administration -->
-                </div>
+                    <div id="detail-billet">
+                        <!-- Bouton options pour administration -->
+                    </div>
 
-            </article>
-        </section>
+                </article>
+            </section>
 
 
-            <section id = "List-comment">
+            <section id = "list-comment">
 
             <article id="comment-article">
                 <div id="text-comment">

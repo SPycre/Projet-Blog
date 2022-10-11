@@ -1,14 +1,15 @@
-#Billet{
-        background-color: rgb(235,235,235);
-        margin: 10px 30px;
-        padding: 10px;
+#billet{
+    background-color: rgb(235,235,235);
+    margin: 30px;
+    padding: 10px;
+    border-radius: 15px;
 }
 
-#List-comment{
-        height: 250px;
-        background-color: rgb(235,235,235);
-        margin: 10px 30px;
-        padding: 10px;
+#list-comment{
+    background-color: rgb(235,235,235);
+    margin: 30px;
+    padding: 10px;
+    border-radius: 15px;
 }
 
 #text-billet {
@@ -35,12 +36,14 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    border-radius: 10px;
 }
 
 #add-comment{
     background-color: rgb(235,235,235);
-    margin: 10px 30px;
+    margin: 30px;
     padding: 10px;
+    border-radius: 15px;
 }
 
 #form-commentaire {
