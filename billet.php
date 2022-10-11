@@ -45,23 +45,23 @@
                             <span class="contenu-comment">Content</span>
                         </div>
                         <div class="detail-comment">
-                        
+                            <span class="date-comment">Date</span>
                         </div>
                     </article>
                 </template>
 
+                <span id="subtitle">Commentaires</span>
+
                 <section id = "list-comment">
+                    /!\ Unable to load content /!\
+                </section>
 
-                    <article class="comment-article">
-                        <div class="text-comment">
-                            <span class="pseudo-comment">Pseudo</span>
-                            <span class="contenu-comment">Content</span>
-                        </div>
-                        <div class="detail-comment">
-
-                        </div>
-                    </article>
-
+                <section id="page-selector">
+                        <button class="page-select first">|<</button>
+                        <button class="page-select previous"><</button>
+                        <span id="page-number">X</span>
+                        <button class="page-select next">></button>
+                        <button class="page-select last">>|</button>
                 </section>
 
                 <section id="add-comment">
@@ -76,7 +76,9 @@
                                 <textarea id="comment" input="text" name="comment" rows="1" placeholder="Votre commentaire" required></textarea>
                             </div>
                         </div>
-                        <button type="submit">Envoyer</button>
+                        <div>
+                            <button type="submit">Envoyer</button>
+                        </div>
                     </form>
                 </section>
 

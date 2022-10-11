@@ -1,3 +1,11 @@
+
+#subtitle {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+}
+
 #billet{
     background-color: rgb(235,235,235);
     margin: 30px;
@@ -10,6 +18,12 @@
     margin: 30px;
     padding: 10px;
     border-radius: 15px;
+    color:black;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
 }
 
 #text-billet {
@@ -46,11 +60,81 @@
     border-radius: 15px;
 }
 
+#page-selector {
+    color: black;
+    font-weight: bold;
+    background-color: rgb(235,235,235);
+    margin: 10px 40%;
+    padding: 10px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#page-selector button {
+    color: black;
+    font-weight: bold;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#form-commentaire input {
+    transition-duration:.5s;
+    background-color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 0px;
+    border-radius: 30px;
+}
+
+#form-commentaire input:focus {
+    outline: none;
+    transition-duration:.5s;
+    background-color: rgb(220, 220, 220);
+}
+
+#form-commentaire textarea {
+    resize: none;
+    transition-duration:.5s;
+    background-color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    margin-left: 5px;
+    border: 0px;
+    border-radius: 30px;
+}
+
+#form-commentaire button {
+    color:white;
+    font-weight: bold;
+    padding: 5px;
+    border: 0px;
+    border-radius: 30px;
+    width: 20%;
+    background-color: rgb(121, 163, 255);
+}
+
+#form-commentaire textarea:focus {
+    outline: none;
+    transition-duration:.5s;
+    background-color: rgb(220, 220, 220);
+}
+
+#comment-pseudo {
+    display: flex;
+    align-items: center;
+}
+
+#comment-content {
+    display: flex;
+    align-items: center;
+}
+
 #form-commentaire {
     flex-direction: column;
     display: flex;
     color: black;
-    align-items: center;
+    align-items: stretch;
+    font-weight: bold;
 }
 
 #form-commentaire>div {
@@ -58,10 +142,6 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 10px;
-}
-
-#form-commentaire button {
-    width: 50%;
 }
 
 .comment-article {
@@ -82,6 +162,10 @@
 
 .pseudo-comment {
     font-weight: bold;
+}
+
+.date-comment {
+    color: gray;
 }
 
 .contenu-comment {
