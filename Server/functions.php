@@ -31,6 +31,18 @@ $functions['getBillet'] = function($arguments) {
     return $result[0];
 };
 
+$functions['addComment'] = function($arguments) {
+
+    $db = connectDb('root','root');
+    $statement = $db -> prepare('INSERT INTO commentaire (pseudo,commentaire,billet_id) VALUES (:pseudo,:comment,:id)');
+
+    $statement -> bindValue(':pseudo',$arguments[1],PDO::PARAM_STR);
+    $statement -> bindValue(':comment',$arguments[2],PDO::PARAM_STR);
+    $statement -> bindValue(':id',$arguments[0],PDO::PARAM_INT);
+
+    $statement -> execute();
+};
+
 $functions['countBillets'] = function($arguments) {
     $db = connectDb('root','root');
     $statement = $db -> prepare('SELECT COUNT(*) FROM billet');

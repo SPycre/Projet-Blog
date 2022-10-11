@@ -64,25 +64,26 @@
     width: 50%;
 }
 
-#comment-pseudo{
+.comment-article {
+    margin: 10px;
+    background-color: white;
+    padding: 15px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 5px;
+    border-radius: 10px;
+    color:black
 }
 
-#comment-pseudo input {
-    margin-left: 20px;
-}
-
-#comment-content{
+.text-comment {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin: 5px;
+    flex-direction: column;
 }
 
-#comment-content textarea {
-    margin-left: 20px;
-    resize: none;
+.pseudo-comment {
+    font-weight: bold;
+}
+
+.contenu-comment {
+    color: grey;
 }
