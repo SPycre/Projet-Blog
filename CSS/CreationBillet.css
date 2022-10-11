@@ -1,20 +1,25 @@
-body{
-   margin-left: 25%;
-   margin-right: 25%;
-   width: 100%;
-}
-#main{
-    background-color: #D3D3D3;
-    text-align: center;
-    border: solid;
-    width: 50%;
-}
-form{
+#form-card form{
     padding: 5px;
 }
-div{
+
+#form-card div{
     padding: 10px;
 }
-textarea {
+
+#form-card textarea {
   resize: none;
+}
+
+#form-card {
+  background-color: rgb(235,235,235);
+  margin: 30px;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+#center-form{
+  text-align: center;
+  color: black;
+  margin-left: 25%;
+  margin-right: 25%;
 }
