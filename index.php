@@ -4,6 +4,7 @@
         <title></title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="Client/home.js" defer></script>
+        <script src="Client/connect.js" defer></script>
 
         <link href="CSS/header.css" rel="stylesheet"/>
         <link href="CSS/home.css" rel="stylesheet"/>
@@ -30,8 +31,14 @@
                         </div>
                     </article>
                 </template>
+
+                <template id="add-ticket-template">
+                    <div id="add-ticket-holder">
+                        <button id="add-ticket">Ajouter un billet</button>
+                    </div>
+                </template>
                 <section id="liste-billets">
-                    /!\ Unable to load content /!\
+                    <span class="billet">/!\ Unable to load content /!\</span>
                 </section>
                 <section id="page-selector">
                         <button class="page-select first">|<</button>

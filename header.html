@@ -1,19 +1,30 @@
-<span id="titre-site">
+<span id="site-title">
     Titre du blog
 </span>
-<div id="titre-page">
+<div id="page-title">
     Titre page
 </div>
-<form>
-    <div class="input-div">
-        <label for="pseudo">Pseudo</label>
-        <input type="text"/>
-    </div>
-    <div class="input-div">
-        <label for="password">Mot de passe</label>
-        <input type="password"/>
-    </div>
-    <div class="input-div">
-        <button type="submit">Connexion</button>
-    </div>
-</form>
+<div id="connect-form-holder">
+
+</div>
+<template id="form-disconnect-template"> 
+    <form id="form-disconnect">
+        <span id="name-user">Welcome, user_name!</span>
+        <button id="disconnect">Deconnexion</button>
+    </form>
+</template>
+<template id="form-connection-template">
+    <form id="form-connection">
+        <div class="input-div">
+            <label for="username">Pseudo</label>
+            <input name="username" type="text"/>
+        </div>
+        <div class="input-div">
+            <label for="password">Mot de passe</label>
+            <input name="password" type="password"/>
+        </div>
+        <div class="input-div">
+            <button id="connect">Connexion</button>
+        </div>
+    </form>
+</template>

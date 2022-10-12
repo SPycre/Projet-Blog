@@ -3,6 +3,9 @@
 
 	<head>
 		<title></title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="Client/connect.js" defer></script>
+
 		<link href="CSS/header.css" rel="stylesheet"/>
 		<link href="CSS/main.css" rel="stylesheet"/>
 		<link href="CSS/creationBillet.css" rel="stylesheet"/>

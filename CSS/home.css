@@ -1,4 +1,21 @@
 
+#add-ticket-holder {
+    display: flex;
+    justify-content: center;
+}
+
+#add-ticket {
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 0px;
+    border-radius: 30px;
+}
+
+#add-ticket:hover {
+    background-color: rgb(220, 220, 220);
+}
+
 #liste-billets {
     background-color: rgb(235,235,235);
     margin: 30px;

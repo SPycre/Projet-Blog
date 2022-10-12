@@ -1,17 +1,31 @@
-const urlParams = new URLSearchParams(window.location.search);
-const billet = document.querySelector('#billet');
-const titrebillet = document.querySelector('#titre-billet');
-const contenubillet = document.querySelector('#contenu-billet');
-const formcomment = document.querySelector('#form-commentaire');
-const commenttemplate = document.querySelector('#template-comment').content;
-const commentList = document.querySelector('#list-comment');
-const pageNumber = document.querySelector('#page-number');
-const id = urlParams.get('id');
+const add_comment_form = document.querySelector('#form-commentaire');
+const comment_list = document.querySelector('#list-comment');
+const ticket_id = new URLSearchParams(window.location.search).get('id');
 
-document.querySelector('#titre-page').innerHTML = "Billet"
+/**
+ * Number of comments per page
+ * @type {int}
+ */
+let commentsPerPage = 5
+/**
+ * Number of currently displayed comments page
+ * @type {int}
+ */
+let numberOfPage = 0;
+/**
+ * Number of displayable comments page
+ * @type {int}
+ */
+let lastPageNumber = 1;
 
+document.querySelector('#page-title').innerHTML = "Billet"
+
+/**
+ * Pre-made request to send to the server
+ * @param {*} data data to send to the server. Contains function name and arguments
+ * @param {*} callback callback function to execute once the request is done
+ */
 function requete(data,callback) {
-
     jQuery.ajax({
         type: "POST",
         url: "./Server/server.php",
@@ -19,18 +33,18 @@ function requete(data,callback) {
         data: data,
         success: callback
     });
-
 }
 
-
-function initBillet(id) {
-
+/**
+ * Display tickets details
+ */
+function initTicket() {
     requete(
-        {function:'getBillet' , arguments: [id]},
+        {function:'getBillet' , arguments: [ticket_id]},
         function (obj) {
             if ( !('error' in obj) ) {
-                titrebillet.innerHTML = obj.result['titre'];
-                contenubillet.innerHTML = obj.result['content'];
+                document.querySelector('#titre-billet').innerHTML = obj.result['titre'];
+                document.querySelector('#contenu-billet').innerHTML = obj.result['content'];
 
             } else {
                 console.log(obj.error);
@@ -40,48 +54,26 @@ function initBillet(id) {
 
 }
 
-formcomment.addEventListener('submit',(event) => {
-    event.preventDefault();
-
-    const pseudo = formcomment.elements.pseudo.value;
-    const comment = formcomment.elements.comment.value;
-
+/**
+ * Display selected page of comments under the ticket
+ * @param {int} page Index of the comments page to display
+ */
+function initComments(page) { 
     requete(
-        {function:'addComment', arguments: [id, pseudo, comment]},
-        function (obj) {
-            if ('error' in obj) {
-                console.log(obj.error);
-            } else {
-                initComments(id,0,5);
-                updateCommentCount(id);
-            }
-        }
-    )
-});
-
-
-const pageSelector = document.querySelectorAll('.page-select');
-let pageVar = 0;
-let maxPage = 1;
-
-
-function initComments(id,page,count) {
-
-    requete(
-        {function:'getComments' , arguments: [id,page*count,count]},
+        {function:'getComments' , arguments: [ticket_id,page*commentsPerPage,commentsPerPage]},
         function (obj) {
             if ( !('error' in obj) ) {
-
-                commentList.innerHTML = "";
-                pageVar = page;
-                pageNumber.innerHTML = pageVar+1;
-
+                comment_list.innerHTML = "";
+                numberOfPage = page;
+                document.querySelector('#page-number').innerHTML = numberOfPage+1;
                 if (obj.result.length == 0) {
-                    commentList.innerHTML = "Soyez le premier à commenter!"
+                    comment_list.innerHTML = "Soyez le premier à commenter!"
                 }
 
+                const comment_template = document.querySelector('#template-comment').content;
+
                 obj.result.forEach(comment => {
-                    const commentNode = commenttemplate.cloneNode(true);
+                    const commentNode = comment_template.cloneNode(true);
 
                     const pseudo = commentNode.querySelector('.pseudo-comment');
                     pseudo.innerHTML = comment.pseudo;
@@ -90,22 +82,24 @@ function initComments(id,page,count) {
                     const date = commentNode.querySelector('.date-comment');
                     date.innerHTML = comment.date;
 
-                    commentList.append(commentNode);
+                    comment_list.append(commentNode);
                 });
             } else {
                 console.log(obj.error);
             }
         }
     )
-
 }
 
-function updateCommentCount(id) {
+/**
+ * Calculate number of displayable pages for comment list
+ */
+function calculateMaxCommentPage() {
     requete(
-        {function:'countComments' , arguments: [id]},
+        {function:'countComments' , arguments: [ticket_id]},
         function (obj) {
             if ( !('error' in obj) ) {
-                maxPage = Math.ceil(obj.result/5) - 1;
+                lastPageNumber = Math.ceil(obj.result/commentsPerPage) - 1;
             } else {
                 console.log(obj.error);
             }
@@ -113,23 +107,44 @@ function updateCommentCount(id) {
     )
 }
 
-pageSelector.forEach(p_selector => {
+/**
+ * Adds submit event to the add comment form
+ */
+ add_comment_form.addEventListener('submit',(event) => {
+    event.preventDefault();
+    const pseudo = add_comment_form.elements.pseudo.value;
+    const comment = add_comment_form.elements.comment.value;
+    requete(
+        {function:'addComment', arguments: [ticket_id, pseudo, comment]},
+        function (obj) {
+            if ('error' in obj) {
+                console.log(obj.error);
+            } else {
+                initComments(0);
+                calculateMaxCommentPage();
+            }
+        }
+    )
+});
 
+/**
+ * Initialize clickable page selector to navigate trough comments pages
+ */
+ document.querySelectorAll('.page-select').forEach(p_selector => {
     p_selector.addEventListener('click', () => {
-        if (p_selector.classList.contains('next') && pageVar+1 <= maxPage) {
-            initComments(id,pageVar+1,5);
-        } else if (p_selector.classList.contains('previous') && pageVar-1 >= 0) {
-            initComments(id,pageVar-1,5);
-        } else if (p_selector.classList.contains('first') && pageVar != 0) {
-            initComments(id,0,5);
-        } else if (p_selector.classList.contains('last') && pageVar != maxPage) {
-            initComments(id,maxPage,5);
+        if (p_selector.classList.contains('next') && numberOfPage+1 <= lastPageNumber) {
+            initComments(numberOfPage+1,5);
+        } else if (p_selector.classList.contains('previous') && numberOfPage-1 >= 0) {
+            initComments(numberOfPage-1,5);
+        } else if (p_selector.classList.contains('first') && numberOfPage != 0) {
+            initComments(0,5);
+        } else if (p_selector.classList.contains('last') && numberOfPage != lastPageNumber) {
+            initComments(lastPageNumber,5);
         }
     })
+});
 
-})
 
-
-initBillet(id)
-updateCommentCount(id)
-initComments(id,0,5)
+initTicket()
+calculateMaxCommentPage()
+initComments(0)

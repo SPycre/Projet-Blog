@@ -9,14 +9,14 @@ header {
     font-weight: bold;
 }
 
-#titre-site {
+#site-title {
     display: flex;
     align-items: center;
-    font-size: 55px;
+    font-size: 45px;
     padding-left: 15px;
 }
 
-#titre-page {
+#page-title {
     margin-bottom: 10px;
     display: flex;
     align-items: flex-end;
@@ -51,6 +51,33 @@ header .input-div button {
     padding: 5px 10px;
     border: 0px;
     border-radius: 30px;
+}
+
+header #form-disconnect button {
+    background-color: rgb(255, 255, 255);
+    font-weight: bold;
+    padding: 5px 10px;
+    border: 0px;
+    border-radius: 30px;
+}
+
+header #form-disconnect button:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+header #form-disconnect {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+header #connect-form-holder {
+    display: flex;
+}
+
+header #name-user {
+    font-size:larger;
 }
 
 header .input-div button:hover {

@@ -1,10 +1,5 @@
 <?php
 
-$functions = [];
-
-function connectDb($user,$pass) {
-    return new PDO('mysql:host=localhost;dbname=projet_blog',$user,$pass);
-}
 
 $functions['getAllBillets'] = function($arguments) {
     $db = connectDb('root','root');
@@ -29,6 +24,16 @@ $functions['getBillet'] = function($arguments) {
     $result = $statement -> fetchAll();
 
     return $result[0];
+};
+
+$functions['countBillets'] = function($arguments) {
+    $db = connectDb('root','root');
+    $statement = $db -> prepare('SELECT COUNT(*) FROM billet');
+
+    $statement -> execute();
+    $result = $statement -> fetchAll();
+
+    return $result[0][0];
 };
 
 $functions['addComment'] = function($arguments) {
@@ -66,14 +71,4 @@ $functions['getComments'] = function($arguments) {
     $result = $statement -> fetchAll();
 
     return $result;
-};
-
-$functions['countBillets'] = function($arguments) {
-    $db = connectDb('root','root');
-    $statement = $db -> prepare('SELECT COUNT(*) FROM billet');
-
-    $statement -> execute();
-    $result = $statement -> fetchAll();
-
-    return $result[0][0];
 };

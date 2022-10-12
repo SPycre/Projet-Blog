@@ -1,7 +1,14 @@
 <?php
 
+$functions = [];
+
+function connectDb($user,$pass) {
+    return new PDO('mysql:host=localhost;dbname=projet_blog',$user,$pass);
+}
+
 header('Content-Type: application/json');
 include_once('functions.php');
+include_once('session.php');
 
 $result = array();
 
