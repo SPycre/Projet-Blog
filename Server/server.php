@@ -12,10 +12,13 @@ include_once('session.php');
 
 $result = array();
 
+$data=(array)json_decode(file_get_contents("php://input"));
 
-if ( !isset($_POST['function']) ) { $result['error'] = "No function"; }
-else if ( !isset($functions[$_POST['function']]) ) { $result['error'] = "Function not found"; }
-else if ( !isset($_POST['arguments']) ) { $result['error'] = "No arguments"; }
-else { $result['result'] = $functions[$_POST['function']]($_POST['arguments']); }
+
+if ( !isset($data['function']) ) { $result['error'] = "No function"; }
+else if ( !isset($functions[$data['function']]) ) { $result['error'] = "Function not found"; }
+else if ( !isset($data['arguments']) ) { $result['error'] = "No arguments"; }
+else { $result['result'] = $functions[$data['function']]($data['arguments']); }
 
 echo json_encode($result);
+

@@ -18,8 +18,10 @@ let form;
             'Content-type' : 'application/json',
             'Accept' : 'application/json'
         },
-        body : data,
-    }).then(callback)
+        body : JSON.stringify(data),
+    }).then(function(response) {
+        return response.json();
+    }).then(callback);
 }
 
 /**
