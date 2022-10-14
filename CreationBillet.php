@@ -25,12 +25,12 @@
 
 					<form method="POST">
 						<div>
-							<label for="titre">Titre</label>
-							<input type="text" name="titre">
+							<label for="ticket-title">Titre</label>
+							<input type="text" name="ticket-title">
 						</div>
-						<label for="contenue">Contenue</label>
 						<div>
-							<textarea style="height: 116px; width: 214px;"></textarea>
+							<label for="ticket-content">Contenu</label>
+							<textarea name="ticket-content" rows="7" cols="30"></textarea>
 						</div>
 						<span>
 							<input type="button" name="addImage" value="Ajouter une image">

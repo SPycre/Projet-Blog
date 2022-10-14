@@ -26,13 +26,14 @@ document.querySelector('#page-title').innerHTML = "Billet"
  * @param {*} callback callback function to execute once the request is done
  */
 function requete(data,callback) {
-    jQuery.ajax({
-        type: "POST",
-        url: "./Server/server.php",
-        dataType: 'json',
-        data: data,
-        success: callback
-    });
+    fetch('./Server/server.php',{
+        method : "POST",
+        headers : {
+            'Content-type' : 'application/json',
+            'Accept' : 'application/json'
+        },
+        body : data,
+    }).then(callback)
 }
 
 /**
