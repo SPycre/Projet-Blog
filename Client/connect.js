@@ -65,7 +65,6 @@ function checkConnection() {
 
                     form = connect_form_holder.querySelector('#form-connection');
                     form.addEventListener('submit',(event) => {
-                        console.log("test");
                         event.preventDefault();
                         const username = form.elements.username.value;
                         const password = form.elements.password.value;
