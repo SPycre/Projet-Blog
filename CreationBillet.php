@@ -2,8 +2,9 @@
 <html>
 
 	<head>
-		<title></title>
+		<title>Projet de Blog</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="Client/creationBillet.js" defer></script>
 		<script src="Client/connect.js" defer></script>
 
 		<link href="CSS/header.css" rel="stylesheet"/>
@@ -19,18 +20,17 @@
 
 	<main id="main">
 		<section id="central">
-			<section id="form-card">
-				<div id="center-form">
+			<section id="form-card"
 					<h3>Crée un billet</h3>
 
-					<form method="POST">
+					<form id="add-ticket-form">
 						<div>
-							<label for="ticket-title">Titre</label>
-							<input type="text" name="ticket-title">
+							<label for="title">Titre</label>
+							<input class="input" type="text" name="title">
 						</div>
 						<div>
-							<label for="ticket-content">Contenu</label>
-							<textarea name="ticket-content" rows="7" cols="30"></textarea>
+							<label for="content">Contenu</label>
+							<textarea class="input" name="content" rows="7" cols="30"></textarea>
 						</div>
 						<span>
 							<input type="button" name="addImage" value="Ajouter une image">
@@ -40,7 +40,6 @@
 							<input type="submit" name="submit">
 						</div>
 					</form>
-				</div>
 			</section>
 		</section>
 	</main>

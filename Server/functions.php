@@ -1,5 +1,14 @@
 <?php
 
+$functions['addBillet'] = function($arguments) {
+    $db = connectDb('root','root');
+    $statement = $db -> prepare('INSERT INTO billet (titre,content) VALUES (:title,:content)');
+
+    $statement -> bindValue(':title',$arguments[0],PDO::PARAM_STR);
+    $statement -> bindValue(':content',$arguments[1],PDO::PARAM_STR);
+
+    $statement -> execute();
+};
 
 $functions['getAllBillets'] = function($arguments) {
     $db = connectDb('root','root');

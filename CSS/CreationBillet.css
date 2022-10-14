@@ -1,13 +1,35 @@
 #form-card form{
     padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #form-card div{
     padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 #form-card textarea {
   resize: none;
+}
+
+#form-card .input {
+  transition-duration: .5s;
+  background-color: rgb(255, 255, 255);
+  padding: 7px 15px;
+  margin-left: 5px;
+  border: 0px;
+  border-radius: 15px;
+}
+
+#form-card .input:hover {
+  outline: none;
+  transition-duration:.5s;
+  border: 0px;
+  background-color: rgb(220, 220, 220);
 }
 
 #form-card {
@@ -15,11 +37,7 @@
   margin: 30px;
   padding: 10px;
   border-radius: 15px;
-}
-
-#center-form{
-  text-align: center;
   color: black;
-  margin-left: 25%;
-  margin-right: 25%;
+  text-align: center;
+  font-weight: bold;
 }
