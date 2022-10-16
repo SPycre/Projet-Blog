@@ -72,3 +72,12 @@ $functions['getComments'] = function($arguments) {
 
     return $result;
 };
+
+$functions['removeComment'] = function($arguments) {
+    $db = connectDb('root','root');
+    $statement = $db -> prepare('DELETE FROM commentaire WHERE id = :id');
+
+    $statement -> bindValue(':id',intval($arguments[0]),PDO::PARAM_INT).
+
+    $statement -> execute();
+};

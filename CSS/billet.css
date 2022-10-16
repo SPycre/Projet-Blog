@@ -155,9 +155,22 @@
     color:black
 }
 
+.detail-comment {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: small;
+}
+
+.trash-comment {
+    height: 30px;
+    visibility: hidden;
+}
+
 .text-comment {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 
 .pseudo-comment {

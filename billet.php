@@ -47,6 +47,7 @@
                         </div>
                         <div class="detail-comment">
                             <span class="date-comment">Date</span>
+                            <img src="Images/trash_bin.png" class="trash-comment">
                         </div>
                     </article>
                 </template>
