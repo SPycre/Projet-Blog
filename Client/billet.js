@@ -127,7 +127,7 @@ function calculateMaxCommentPage() {
                     edit_ticket.style.visibility = "visible"
 
                     edit_ticket.addEventListener('click',() => {
-                        
+                        window.location.href = "creationbillet.php?id="+ticket_id;
                     })
 
                     comment_list.querySelectorAll('.comment-article').forEach(comment => {

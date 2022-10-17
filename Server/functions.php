@@ -23,6 +23,18 @@ $functions['getAllBillets'] = function($arguments) {
     return $result;
 };
 
+
+$functions['editBillet'] = function($arguments) {
+    $db = connectDb('root','root');
+    $statement = $db -> prepare('UPDATE billet SET titre = :titre, content = :content WHERE id = :id');
+
+    $statement -> bindValue(':id',$arguments[0],PDO::PARAM_INT);
+    $statement -> bindValue(':titre',$arguments[1],PDO::PARAM_STR);
+    $statement -> bindValue(':content',$arguments[2],PDO::PARAM_STR);
+
+    $statement -> execute();
+};
+
 $functions['getBillet'] = function($arguments) {
     $db = connectDb('root','root');
     $statement = $db -> prepare('SELECT * FROM billet WHERE id = :id');

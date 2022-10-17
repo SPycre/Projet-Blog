@@ -44,7 +44,7 @@ function requete(data,callback) {
 function initTickets(page) {
 
     requete(
-        {function:'getAllBillets' , arguments: [page*ticketsPerPage,ticketsPerPage]},
+        {function:'getAllBillets' , arguments:[page*ticketsPerPage,ticketsPerPage]},
         function (obj) {
             if ( !('error' in obj) ) {
 
