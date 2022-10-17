@@ -120,7 +120,13 @@ function calculateMaxCommentPage() {
                 console.log(obj.error);
             } else {
                 if (obj.result != false) {
-                    console.log("test")
+                    const edit_ticket = document.querySelector('#edit-billet') ;
+                    edit_ticket.style.visibility = "visible"
+
+                    edit_ticket.addEventListener('click',() => {
+                        
+                    })
+
                     comment_list.querySelectorAll('.comment-article').forEach(comment => {
                         const trash_bin = comment.querySelector('.trash-comment');
 

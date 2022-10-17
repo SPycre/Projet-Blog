@@ -23,7 +23,11 @@ $functions['getBillet'] = function($arguments) {
     $statement -> execute();
     $result = $statement -> fetchAll();
 
-    return $result[0];
+    if (isset($result[0])) {
+        return $result[0];
+    } else {
+        return null;
+    }
 };
 
 $functions['countBillets'] = function($arguments) {

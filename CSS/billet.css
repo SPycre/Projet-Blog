@@ -144,6 +144,16 @@
     padding: 10px;
 }
 
+#header-billet {
+    display: flex;
+    justify-content: space-between;
+}
+
+#edit-billet {
+    visibility: hidden;
+    height: 40px;
+}
+
 .comment-article {
     margin: 10px;
     background-color: white;
