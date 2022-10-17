@@ -32,7 +32,11 @@ $functions['getBillet'] = function($arguments) {
     $statement -> execute();
     $result = $statement -> fetchAll();
 
-    return $result[0];
+    if (isset($result[0])) {
+        return $result[0];
+    } else {
+        return null;
+    }
 };
 
 $functions['countBillets'] = function($arguments) {
@@ -80,4 +84,13 @@ $functions['getComments'] = function($arguments) {
     $result = $statement -> fetchAll();
 
     return $result;
+};
+
+$functions['removeComment'] = function($arguments) {
+    $db = connectDb('root','root');
+    $statement = $db -> prepare('DELETE FROM commentaire WHERE id = :id');
+
+    $statement -> bindValue(':id',intval($arguments[0]),PDO::PARAM_INT).
+
+    $statement -> execute();
 };

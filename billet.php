@@ -28,7 +28,10 @@
 
                     <article id="billet-article">
                         <div id="text-billet">
-                            <span id="titre-billet">Titre</span>
+                            <div id="header-billet">
+                                <span id="titre-billet">Titre</span>
+                                <img src="Images/edit.png" id="edit-billet">
+                            </div>
                             <span id="contenu-billet">Content</span>
                         </div>
 
@@ -47,6 +50,7 @@
                         </div>
                         <div class="detail-comment">
                             <span class="date-comment">Date</span>
+                            <img src="Images/trash_bin.png" class="trash-comment">
                         </div>
                     </article>
                 </template>

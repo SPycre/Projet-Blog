@@ -76,7 +76,8 @@ function initComments(page) {
                 const comment_template = document.querySelector('#template-comment').content;
 
                 obj.result.forEach(comment => {
-                    const commentNode = comment_template.cloneNode(true);
+                    const commentNode = comment_template.cloneNode(true).querySelector('.comment-article');
+                    commentNode.setAttribute("id",comment.id)
 
                     const pseudo = commentNode.querySelector('.pseudo-comment');
                     pseudo.innerHTML = comment.pseudo;
@@ -87,6 +88,7 @@ function initComments(page) {
 
                     comment_list.append(commentNode);
                 });
+                initAdmin()
             } else {
                 console.log(obj.error);
             }
@@ -108,6 +110,52 @@ function calculateMaxCommentPage() {
             }
         }
     )
+}
+
+/**
+ * Initialize admin only options for comments ( remove comment )
+ */
+ function initAdmin() {
+    requete(
+        {function:'checkConnect', arguments: [0]},
+        function (obj) {
+            if ('error' in obj) {
+                console.log(obj.error);
+            } else {
+                if (obj.result != false) {
+                    const edit_ticket = document.querySelector('#edit-billet') ;
+                    edit_ticket.style.visibility = "visible"
+
+                    edit_ticket.addEventListener('click',() => {
+                        
+                    })
+
+                    comment_list.querySelectorAll('.comment-article').forEach(comment => {
+                        const trash_bin = comment.querySelector('.trash-comment');
+
+                        trash_bin.addEventListener('click',() => {
+                            requete(
+                                {function:'removeComment', arguments: [comment.id]},
+                                function (obj) {
+                                    if ('error' in obj) {
+                                        console.log(obj.error);
+                                    } else {
+                                        initComments(numberOfPage);
+                                    }
+                                }
+                            )
+                        })
+                        comment.addEventListener('mouseover',() => {
+                            trash_bin.style.visibility = "visible";
+                        })
+                        comment.addEventListener('mouseout',() => {
+                            trash_bin.style.visibility = "hidden";
+                        })
+                    });
+                }
+            }
+        }
+    );
 }
 
 /**
