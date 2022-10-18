@@ -7,7 +7,7 @@ if (ticket_id == null) {
 } else {
     document.querySelector('#page-title').innerHTML = "Edition d'un billet"
 
-    requete(
+    utils.requete(
         {function:'getBillet',arguments: [ticket_id] },
         function (obj) {
             if ('error' in obj) {
