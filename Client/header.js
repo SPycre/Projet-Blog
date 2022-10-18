@@ -64,7 +64,7 @@ function checkConnection() {
                                 if ('error' in obj) {
                                     console.log(obj.error);
                                 } else {
-                                    window.location.href = "index.php";
+                                    window.location.href = window.location.href;
                                 }
                             }
                         )
