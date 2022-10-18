@@ -7,6 +7,10 @@ const connect_form_holder = document.querySelector('#connect-form-holder');
  */
 let form;
 
+document.querySelector('#options').addEventListener('click',() => {
+    window.location.href = "options.php";
+});
+
 /**
  * Check if someone is connected on this session
  * Display connection or disconnection form

@@ -9,6 +9,11 @@ header {
     font-weight: bold;
 }
 
+header #options {
+    height: 40px;
+    margin: 15px;
+}
+
 #site-title {
     display: flex;
     align-items: center;
@@ -77,7 +82,7 @@ header #connect-form-holder {
 }
 
 header #name-user {
-    font-size:larger;
+    font-size:35px;
 }
 
 header .input-div button:hover {
