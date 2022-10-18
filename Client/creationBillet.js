@@ -1,23 +1,6 @@
+import * as utils from "./utils.js";
 const add_ticket_form = document.querySelector('#add-ticket-form');
 const ticket_id = new URLSearchParams(window.location.search).get('id');
-
-/**
- * Pre-made request to send to the server
- * @param {*} data data to send to the server. Contains function name and arguments
- * @param {*} callback callback function to execute once the request is done
- */
- function requete(data,callback) {
-    fetch('./Server/server.php',{
-        method : "POST",
-        headers : {
-            'Content-type' : 'application/json',
-            'Accept' : 'application/json'
-        },
-        body : JSON.stringify(data),
-    }).then(function(response) {
-        return response.json();
-    }).then(callback);
-}
 
 if (ticket_id == null) {
     document.querySelector('#page-title').innerHTML = "Création d'un billet"
@@ -45,7 +28,7 @@ add_ticket_form.addEventListener('submit',(event) => {
     const content = add_ticket_form.elements.content.value;
 
     if (ticket_id == null) {
-        requete(
+        utils.requete(
             {function : "addBillet", arguments : [title,content]},
             function (obj) {
                 if ('error' in obj) {
@@ -56,7 +39,7 @@ add_ticket_form.addEventListener('submit',(event) => {
             }
         )
     } else {
-        requete(
+        utils.requete(
             {function : "editBillet", arguments : [ticket_id,title,content]},
             function (obj) {
                 if ('error' in obj) {

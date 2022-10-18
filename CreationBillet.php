@@ -4,8 +4,7 @@
 	<head>
 		<title>Projet de Blog</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="Client/creationBillet.js" defer></script>
-		<script src="Client/connect.js" defer></script>
+		<script type="module" src="Client/creationBillet.js" defer></script>
 
 		<link href="CSS/header.css" rel="stylesheet"/>
 		<link href="CSS/main.css" rel="stylesheet"/>

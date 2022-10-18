@@ -4,8 +4,7 @@
 
         <title>Projet de Blog</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="Client/billet.js" defer></script>
-        <script src="Client/connect.js" defer></script>
+        <script type="module" src="Client/billet.js" defer></script>
 
         <link href="CSS/header.css" rel="stylesheet"/>
         <link href="CSS/main.css" rel="stylesheet"/>
@@ -24,7 +23,7 @@
 
             <section id="central">
                 
-                <section id="billet">
+                <section id="ticket">
 
                     <article id="billet-article">
                         <div id="text-billet">

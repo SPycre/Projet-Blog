@@ -1,3 +1,4 @@
+import * as utils from "./utils.js";
 const ticket_list = document.querySelector('#liste-billets');
 
 /**
@@ -18,24 +19,6 @@ let lastPageNumber = 1;
 
 document.querySelector('#page-title').innerHTML = "Accueil"
 
-/**
- * Pre-made request to send to the server
- * @param {object} data data to send to the server. Contains function name and arguments
- * @param {function} callback callback function to execute once the request is done
- */
-function requete(data,callback) {
-    fetch('./Server/server.php',{
-        method : "POST",
-        headers : {
-            'Content-type' : 'application/json',
-            'Accept' : 'application/json'
-        },
-        body : JSON.stringify(data),
-    }).then(function(response) {
-        return response.json();
-    }).then(callback);
-}
-
 
 /**
  * Display a page of selectable tickets on the home page
@@ -43,7 +26,7 @@ function requete(data,callback) {
  */
 function initTickets(page) {
 
-    requete(
+    utils.requete(
         {function:'getAllBillets' , arguments:[page*ticketsPerPage,ticketsPerPage]},
         function (obj) {
             if ( !('error' in obj) ) {
@@ -86,7 +69,7 @@ function initTickets(page) {
  * Initialize admin only options ( add-ticket button )
  */
 function initAdmin() {
-    requete(
+    utils.requete(
         {function:'checkConnect', arguments: [0]},
         function (obj) {
             if ('error' in obj) {
@@ -109,7 +92,7 @@ function initAdmin() {
  * Calculate the number of pages depending the number of tickets
  */
 function calculateMaxTicketPage() {
-    requete(
+    utils.requete(
         {function:'countBillets' , arguments: [0]},
         function (obj) {
             if ( !('error' in obj) ) {

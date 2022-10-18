@@ -1,6 +1,8 @@
+import * as utils from "./utils.js";
 const add_comment_form = document.querySelector('#form-commentaire');
 const comment_list = document.querySelector('#list-comment');
 const ticket_id = new URLSearchParams(window.location.search).get('id');
+
 
 /**
  * Number of comments per page
@@ -20,29 +22,13 @@ let lastPageNumber = 1;
 
 document.querySelector('#page-title').innerHTML = "Billet"
 
-/**
- * Pre-made request to send to the server
- * @param {*} data data to send to the server. Contains function name and arguments
- * @param {*} callback callback function to execute once the request is done
- */
-function requete(data,callback) {
-    fetch('./Server/server.php',{
-        method : "POST",
-        headers : {
-            'Content-type' : 'application/json',
-            'Accept' : 'application/json'
-        },
-        body : JSON.stringify(data),
-    }).then(function(response) {
-        return response.json();
-    }).then(callback);
-}
+
 
 /**
  * Display tickets details
  */
 function initTicket() {
-    requete(
+    utils.requete(
         {function:'getBillet' , arguments: [ticket_id]},
         function (obj) {
             if ( !('error' in obj) ) {
@@ -62,7 +48,7 @@ function initTicket() {
  * @param {int} page Index of the comments page to display
  */
 function initComments(page) { 
-    requete(
+    utils.requete(
         {function:'getComments' , arguments: [ticket_id,page*commentsPerPage,commentsPerPage]},
         function (obj) {
             if ( !('error' in obj) ) {
@@ -100,7 +86,7 @@ function initComments(page) {
  * Calculate number of displayable pages for comment list
  */
 function calculateMaxCommentPage() {
-    requete(
+    utils.requete(
         {function:'countComments' , arguments: [ticket_id]},
         function (obj) {
             if ( !('error' in obj) ) {
@@ -116,7 +102,7 @@ function calculateMaxCommentPage() {
  * Initialize admin only options for comments ( remove comment )
  */
  function initAdmin() {
-    requete(
+    utils.requete(
         {function:'checkConnect', arguments: [0]},
         function (obj) {
             if ('error' in obj) {
@@ -134,7 +120,7 @@ function calculateMaxCommentPage() {
                         const trash_bin = comment.querySelector('.trash-comment');
 
                         trash_bin.addEventListener('click',() => {
-                            requete(
+                            utils.requete(
                                 {function:'removeComment', arguments: [comment.id]},
                                 function (obj) {
                                     if ('error' in obj) {
@@ -165,7 +151,7 @@ function calculateMaxCommentPage() {
     event.preventDefault();
     const pseudo = add_comment_form.elements.pseudo.value;
     const comment = add_comment_form.elements.comment.value;
-    requete(
+    utils.requete(
         {function:'addComment', arguments: [ticket_id, pseudo, comment]},
         function (obj) {
             if ('error' in obj) {
