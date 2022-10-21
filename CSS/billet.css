@@ -154,6 +154,11 @@
     height: 40px;
 }
 
+#trash-billet {
+    visibility: hidden;
+    height: 40px;
+}
+
 .comment-article {
     margin: 10px;
     background-color: white;

@@ -113,11 +113,27 @@ function calculateMaxCommentPage() {
                 console.log(obj.error);
             } else {
                 if (obj.result != false) {
-                    const edit_ticket = document.querySelector('#edit-billet') ;
+                    const edit_ticket = document.querySelector('#edit-billet');
+                    const trash_ticket = document.querySelector('#trash-billet');
                     edit_ticket.style.visibility = "visible"
+                    trash_ticket.style.visibility = "visible"
+
 
                     edit_ticket.addEventListener('click',() => {
                         window.location.href = "creationbillet.php?id="+ticket_id;
+                    })
+
+                    trash_ticket.addEventListener('click',() => {
+                        utils.requete(
+                            {function:'removeBillet', arguments: [ticket_id]},
+                            function (obj) {
+                                if ('error' in obj) {
+                                    console.log(obj.error);
+                                } else {
+                                    window.location.href = "index.php";
+                                }
+                            }
+                        )
                     })
 
                     comment_list.querySelectorAll('.comment-article').forEach(comment => {

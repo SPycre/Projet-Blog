@@ -23,6 +23,14 @@ $functions['getAllBillets'] = function($arguments) {
     return $result;
 };
 
+$functions['removeBillet'] = function($arguments) {
+    $db = connectDb('root','root');
+    $statement = $db -> prepare('DELETE FROM billet WHERE id = :id');
+
+    $statement -> bindValue(':id',intval($arguments[0]),PDO::PARAM_INT);
+
+    $statement -> execute();
+};
 
 $functions['editBillet'] = function($arguments) {
     $db = connectDb('root','root');

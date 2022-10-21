@@ -29,7 +29,10 @@
                         <div id="text-billet">
                             <div id="header-billet">
                                 <span id="titre-billet">Titre</span>
-                                <img src="Images/edit.png" id="edit-billet">
+                                <div>
+                                    <img src="Images/trash_bin.png" id="trash-billet">
+                                    <img src="Images/edit.png" id="edit-billet">
+                                </div>
                             </div>
                             <span id="contenu-billet">Content</span>
                         </div>
