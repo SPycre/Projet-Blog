@@ -8,7 +8,11 @@ const ticket_id = new URLSearchParams(window.location.search).get('id');
  * Number of comments per page
  * @type {int}
  */
-let commentsPerPage = 5
+let commentsPerPage = utils.getCookie('commentsPerPage');
+if (commentsPerPage == null) {
+    utils.setCookie('commentsPerPage',5);
+    commentsPerPage = 5;
+}
 /**
  * Number of currently displayed comments page
  * @type {int}

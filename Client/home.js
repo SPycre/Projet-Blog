@@ -5,7 +5,13 @@ const ticket_list = document.querySelector('#liste-billets');
  * Number of tickets per page
  * @type {int}
  */
-let ticketsPerPage = 5;
+let ticketsPerPage = utils.getCookie('ticketsPerPage');
+console.log(utils.getCookie('ticketsPerPage'))
+console.log(ticketsPerPage);
+if (ticketsPerPage == null) {
+    utils.setCookie('ticketsPerPage',5);
+    ticketsPerPage = 5;
+}
 /**
  * Number of currently displayed tickets page
  * @type {int}
@@ -18,7 +24,6 @@ let numberOfPage = 0;
 let lastPageNumber = 1;
 
 document.querySelector('#page-title').innerHTML = "Accueil"
-
 
 /**
  * Display a page of selectable tickets on the home page
@@ -106,8 +111,9 @@ function calculateMaxTicketPage() {
 
 /**
  * Initialize clickable page selector to navigate trough tickets pages
+ * @param {HTMLElement} p_selector Page selector button to initialize
  */
-document.querySelectorAll('.page-select').forEach(p_selector => {
+function initPageSelector(p_selector) {
     p_selector.addEventListener('click', () => {
         if (p_selector.classList.contains('next') && numberOfPage+1 <= lastPageNumber) {
             initTickets(numberOfPage+1);
@@ -119,6 +125,11 @@ document.querySelectorAll('.page-select').forEach(p_selector => {
             initTickets(lastPageNumber);
         }
     })
+}
+
+
+document.querySelectorAll('.page-select').forEach(p_selector => {
+    initPageSelector(p_selector);
 })
 
 

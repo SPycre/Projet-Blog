@@ -14,11 +14,20 @@ header #options {
     margin: 15px;
 }
 
-#site-title {
+#title-handler {
     display: flex;
     align-items: center;
     font-size: 45px;
     padding-left: 15px;
+}
+
+#site-title {
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+#site-title:hover {
+    color: rgb(220, 220, 220);
 }
 
 #page-title {

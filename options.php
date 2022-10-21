@@ -16,7 +16,28 @@
         </header>
         <main>
             <section id="central">
-            <section id="settings-form">
+                <section id="settings-form">
+                    <article id="settings-article">
+                        <form id="form">
+                            <div>
+                                <label for="ticketsPerPage">Billets par page :</label>
+                                <select name='ticketsPerPage'>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="commentsPerPage">Commentaires par page :</label>
+                                <select name='commentsPerPage'>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                </select> 
+                            </div>
+                            <button type='submit'>Sauvegarder</button>
+                        </form>
+                    </article> 
                 </section>
             </section>
         </main>

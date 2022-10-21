@@ -11,6 +11,10 @@ document.querySelector('#options').addEventListener('click',() => {
     window.location.href = "options.php";
 });
 
+document.querySelector('#site-title').addEventListener('click',() => {
+    window.location.href = "index.php";
+})
+
 /**
  * Check if someone is connected on this session
  * Display connection or disconnection form
