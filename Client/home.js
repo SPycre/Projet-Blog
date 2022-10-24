@@ -6,8 +6,6 @@ const ticket_list = document.querySelector('#liste-billets');
  * @type {int}
  */
 let ticketsPerPage = utils.getCookie('ticketsPerPage');
-console.log(utils.getCookie('ticketsPerPage'))
-console.log(ticketsPerPage);
 if (ticketsPerPage == null) {
     utils.setCookie('ticketsPerPage',5);
     ticketsPerPage = 5;

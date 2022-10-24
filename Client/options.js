@@ -10,7 +10,6 @@ settings_form.addEventListener('submit',(event) => {
 
     const ticketsPerPage = settings_form.elements.ticketsPerPage.value;
     const commentsPerPage = settings_form.elements.commentsPerPage.value;
-    const color = settings_form.elements.color.value
 
     utils.setCookie('ticketsPerPage',ticketsPerPage);
     utils.setCookie('commentsPerPage',commentsPerPage);

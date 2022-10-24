@@ -26,6 +26,10 @@ add_ticket_form.addEventListener('submit',(event) => {
 
     const title = add_ticket_form.elements.title.value;
     const content = add_ticket_form.elements.content.value;
+    const image = add_ticket_form.elements.addImage.value;
+
+    console.log(title);
+    console.log(image);
 
     if (ticket_id == null) {
         utils.requete(

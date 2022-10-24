@@ -32,7 +32,7 @@
 							<textarea class="input" name="content" rows="7" cols="30"></textarea>
 						</div>
 						<span>
-							<input type="button" name="addImage" value="Ajouter une image">
+							<input type="file" name="addImage" value="Ajouter une image">
 							<input type="button" name="DelImage" value="Supprimer une image">
 						</span>
 						<div>
