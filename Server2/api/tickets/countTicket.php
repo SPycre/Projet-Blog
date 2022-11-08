@@ -11,9 +11,10 @@
     $db = $database -> getConnection();
 
     $item = new Ticket($db);
+    $result = [];
 
     $stmt = $item -> countTickets();
 
-    $resultArr = $stmt -> fetchAll();
+    $result['result'] = $stmt -> fetchAll()[0][0];
 
-    echo json_encode($resultArr);
+    echo json_encode($result);

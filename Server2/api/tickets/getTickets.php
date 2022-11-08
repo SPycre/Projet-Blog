@@ -5,21 +5,20 @@
     header("Access-Control-Allow-Methods: GET");
 
     include_once '../../config/database.php';
-    include_once '../../class/comments.php';
+    include_once '../../class/tickets.php';
 
     $database = new Database();
     $db = $database -> getConnection();
 
-    $item = new Comment($db);
+    $item = new Ticket($db);
     $result = [];
     
     $data = $_GET;
 
-    $item -> billet_id = intval($data['billet_id']);
     $item -> page = intval($data['page']);
     $item -> count = intval($data['count']);
 
-    $stmt = $item -> getComments();
+    $stmt = $item -> getTickets();
 
     $result['result'] = $stmt -> fetchAll();
 

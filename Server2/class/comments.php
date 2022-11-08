@@ -18,11 +18,11 @@ class Comment {
     }
     // GET
     public function getComments() {
-        $stmt = $this -> conn -> prepare('SELECT * FROM '. $this -> db_table .' WHERE billet_id = :billet_id ORDER BY date DESC LIMIT :page , :count');
+        $stmt = $this -> conn -> prepare('SELECT * FROM '. $this -> db_table .' WHERE billet_id = :billet_id');
 
         $stmt -> bindParam(":billet_id", $this -> billet_id, PDO::PARAM_INT);
-        $stmt -> bindParam(":page", $this -> page, PDO::PARAM_INT);
-        $stmt -> bindParam(":count", $this -> count, PDO::PARAM_INT);
+        //$stmt -> bindParam(":page", $this -> page, PDO::PARAM_INT);
+        //$stmt -> bindParam(":count", $this -> count, PDO::PARAM_INT);
 
         $stmt -> execute();
 
@@ -30,19 +30,19 @@ class Comment {
     }
     // CREATE
     public function createComment() {
-        $stmt = $this -> conn -> prepare('INSERT INTO '. $this -> db_table .' (pseudo, commentaire, billet_id, date) VALUES (:pseudo, :commentaire, :billet_id, NOW())');
+        $stmt = $this -> conn -> prepare('INSERT INTO '. $this -> db_table .' (pseudo, commentaire, billet_id) VALUES (:pseudo, :commentaire, :billet_id)');
 
         $stmt -> bindParam(":pseudo", $this -> pseudo, PDO::PARAM_STR);
         $stmt -> bindParam(":commentaire", $this -> commentaire, PDO::PARAM_STR);
         $stmt -> bindParam(":billet_id", $this -> billet_id, PDO::PARAM_INT);
 
-        $stmt -> execute()
+        $stmt -> execute();
 
         return $stmt;
     }
     // DELETE
     public function deleteComment() {
-        $stmt = $this -> conn -> prepare('REMOVE FROM '. $this -> db_table .' WHERE id = :id');
+        $stmt = $this -> conn -> prepare('DELETE FROM '. $this -> db_table .' WHERE id = :id');
 
         $stmt -> bindParam(":id", $this -> id, PDO::PARAM_INT);
 

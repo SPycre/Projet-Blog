@@ -11,15 +11,18 @@
     $db = $database -> getConnection();
 
     $item = new Comment($db);
+    $result = [];
 
     $data = json_decode(file_get_contents("php://input"));
 
     $item -> billet_id = $data -> billet_id;
-    $item -> content = $data -> content;
+    $item -> commentaire = $data -> content;
     $item -> pseudo = $data -> pseudo;
 
     if ($item -> createComment()) {
-        echo 'Ticket has been created';
+        $result['result'] =  'Ticket has been created';
     } else {
-        echo 'Could not create ticket';
+        $result['result'] = 'Could not create ticket';
     }
+
+    echo json_encode($result);

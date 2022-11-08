@@ -14,4 +14,4 @@
         unset($_SESSION['LOGGED_USER']);
         session_destroy();
     }
-    echo json_encode(TRUE);
+    echo json_encode(['result'=>TRUE]);

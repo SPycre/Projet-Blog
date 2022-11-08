@@ -11,13 +11,16 @@
     $db = $database -> getConnection();
 
     $item = new Comment($db);
+    $result = [];
 
     $data = json_decode(file_get_contents("php://input"));
 
-    $item -> id = $data -> id;
+    $item -> id = intval($data -> id);
 
     if ($item -> deleteComment()) {
-        echo 'Ticket has been deleted';
+        $result['result'] = 'Ticket has been deleted';
     } else {
-        echo 'Could not delete ticket';
+        $result['result'] = 'Could not delete ticket';
     }
+
+    echo json_encode($result);

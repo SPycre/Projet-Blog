@@ -11,13 +11,14 @@
     $db = $database -> getConnection();
 
     $item = new Comment($db);
+    $result = [];
     
     $data = $_GET;
 
-    $item -> billet_id = $data -> billet_id;
+    $item -> billet_id = $data['billet_id'];
 
     $stmt = $item -> countComments();
 
-    $resultArr = $stmt -> fetchAll();
+    $result['result'] = $stmt -> fetchAll()[0][0];
 
-    echo json_encode($resultArr);
+    echo json_encode($result);

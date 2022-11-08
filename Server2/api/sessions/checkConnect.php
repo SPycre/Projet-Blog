@@ -15,12 +15,15 @@
     $db = $database -> getConnection();
 
     $item = new User($db);
+    $result = [];
 
     if (isset($_SESSION['LOGGED_USER'])) {
         $item -> id = $_SESSION['LOGGED_USER'];
-        $stmt = $item -> getUser();
+        $stmt = $item -> getUserFromId();
         $resultArr = $stmt -> fetchAll();
-        echo json_encode($resultArr['username']);
+        $result['result'] = $resultArr[0]['username'];
     } else {
-        echo json_encode(FALSE);
+        $result['result'] = FALSE;
     }
+
+    echo json_encode($result);

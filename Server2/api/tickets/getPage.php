@@ -11,6 +11,7 @@
     $db = $database -> getConnection();
 
     $items = new Ticket($db);
+    $result = [];
 
     $data = $_GET;
 
@@ -19,6 +20,6 @@
 
     $stmt = $items -> getTickets();
 
-    $resultArr = $stmt -> fetchAll();
+    $result['result'] = $stmt -> fetchAll();
 
-    echo json_encode($resultArr);
+    echo json_encode($result);

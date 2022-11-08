@@ -30,7 +30,7 @@ document.querySelector('#page-title').innerHTML = "Accueil"
 function initTickets(page) {
 
     utils.requeteV2(
-        'getTickets','GET',{page:page*ticketsPerPage,count:ticketsPerPage},
+        '/tickets/getTickets','GET',{page:page*ticketsPerPage,count:ticketsPerPage},
         function (obj) {
             if ( !('error' in obj) ) {
 

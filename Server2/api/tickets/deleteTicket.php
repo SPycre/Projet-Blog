@@ -11,13 +11,16 @@
     $db = $database -> getConnection();
 
     $item = new Ticket($db);
+    $result = [];
 
     $data = json_decode(file_get_contents("php://input"));
 
     $item -> id = $data -> id;
 
     if ($item -> deleteTicket()) {
-        echo 'Ticket has been deleted';
+        $result['result'] = 'Ticket has been deleted';
     } else {
-        echo 'Could not delete ticket';
+        $result['result'] =  'Could not delete ticket';
     }
+
+    echo json_encode($result);

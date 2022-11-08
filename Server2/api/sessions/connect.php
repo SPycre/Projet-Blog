@@ -15,6 +15,7 @@
     $db = $database -> getConnection();
 
     $item = new User($db);
+    $result = [];
 
     $data = json_decode(file_get_contents("php://input"));
 
@@ -26,7 +27,9 @@
 
     if ($resultArr != null) {
         $_SESSION['LOGGED_USER'] = $resultArr[0]['id'];
-        echo json_encode($resultArr);
+        $result['result'] = $resultArr;
     } else {
-        echo json_encode(FALSE);
+        $result['result'] = FALSE;
     }
+
+    echo json_encode($result);
