@@ -29,8 +29,8 @@ document.querySelector('#page-title').innerHTML = "Accueil"
  */
 function initTickets(page) {
 
-    utils.requete(
-        {function:'getAllBillets' , arguments:[page*ticketsPerPage,ticketsPerPage]},
+    utils.requeteV2(
+        'getTickets','GET',{page:page*ticketsPerPage,count:ticketsPerPage},
         function (obj) {
             if ( !('error' in obj) ) {
 
@@ -72,8 +72,8 @@ function initTickets(page) {
  * Initialize admin only options ( add-ticket button )
  */
 function initAdmin() {
-    utils.requete(
-        {function:'checkConnect', arguments: [0]},
+    utils.requeteV2(
+        '/sessions/checkConnect','GET',{},
         function (obj) {
             if ('error' in obj) {
                 console.log(obj.error);
@@ -95,8 +95,8 @@ function initAdmin() {
  * Calculate the number of pages depending the number of tickets
  */
 function calculateMaxTicketPage() {
-    utils.requete(
-        {function:'countBillets' , arguments: [0]},
+    utils.requeteV2(
+        '/tickets/countTicket','GET',{},
         function (obj) {
             if ( !('error' in obj) ) {
                 lastPageNumber = Math.ceil(obj.result/ticketsPerPage) - 1;

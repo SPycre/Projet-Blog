@@ -32,8 +32,8 @@ document.querySelector('#page-title').innerHTML = "Billet"
  * Display tickets details
  */
 function initTicket() {
-    utils.requete(
-        {function:'getBillet' , arguments: [ticket_id]},
+    utils.requeteV2(
+        '/tickets/getTicket','GET',{id:ticket_id},
         function (obj) {
             if ( !('error' in obj) ) {
                 document.querySelector('#titre-billet').innerHTML = obj.result['titre'];
@@ -52,8 +52,8 @@ function initTicket() {
  * @param {int} page Index of the comments page to display
  */
 function initComments(page) { 
-    utils.requete(
-        {function:'getComments' , arguments: [ticket_id,page*commentsPerPage,commentsPerPage]},
+    utils.requeteV2(
+        '/comments/getComments','GET',{billet_id:ticket_id,page:page*commentsPerPage,count:commentsPerPage},
         function (obj) {
             if ( !('error' in obj) ) {
                 comment_list.innerHTML = "";
@@ -90,8 +90,8 @@ function initComments(page) {
  * Calculate number of displayable pages for comment list
  */
 function calculateMaxCommentPage() {
-    utils.requete(
-        {function:'countComments' , arguments: [ticket_id]},
+    utils.requeteV2(
+        '/comments/countComments','GET',{billet_id:ticket_id},
         function (obj) {
             if ( !('error' in obj) ) {
                 lastPageNumber = Math.ceil(obj.result/commentsPerPage) - 1;
@@ -106,8 +106,8 @@ function calculateMaxCommentPage() {
  * Initialize admin only options for comments ( remove comment )
  */
  function initAdmin() {
-    utils.requete(
-        {function:'checkConnect', arguments: [0]},
+    utils.requeteV2(
+        '/sessions/checkConnect','GET',{},
         function (obj) {
             if ('error' in obj) {
                 console.log(obj.error);
@@ -124,8 +124,8 @@ function calculateMaxCommentPage() {
                     })
 
                     trash_ticket.addEventListener('click',() => {
-                        utils.requete(
-                            {function:'removeBillet', arguments: [ticket_id]},
+                        utils.requeteV2(
+                            '/tickets/deleteTicket','DELETE',{id:ticket_id},
                             function (obj) {
                                 if ('error' in obj) {
                                     console.log(obj.error);
@@ -140,8 +140,8 @@ function calculateMaxCommentPage() {
                         const trash_bin = comment.querySelector('.trash-comment');
 
                         trash_bin.addEventListener('click',() => {
-                            utils.requete(
-                                {function:'removeComment', arguments: [comment.id]},
+                            utils.requeteV2(
+                                '/comments/deleteComment','DELETE',{id:comment.id},
                                 function (obj) {
                                     if ('error' in obj) {
                                         console.log(obj.error);
@@ -171,8 +171,8 @@ function calculateMaxCommentPage() {
     event.preventDefault();
     const pseudo = add_comment_form.elements.pseudo.value;
     const comment = add_comment_form.elements.comment.value;
-    utils.requete(
-        {function:'addComment', arguments: [ticket_id, pseudo, comment]},
+    utils.requeteV2(
+        '/comments/createComment','POST',{billet_id:ticket_id,pseudo:pseudo,content:comment},
         function (obj) {
             if ('error' in obj) {
                 console.log(obj.error);

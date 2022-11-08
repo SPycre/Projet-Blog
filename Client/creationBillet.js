@@ -7,8 +7,8 @@ if (ticket_id == null) {
 } else {
     document.querySelector('#page-title').innerHTML = "Edition d'un billet"
 
-    utils.requete(
-        {function:'getBillet',arguments: [ticket_id] },
+    utils.requeteV2(
+        'tickets/getTicket','GET',{id:ticket_id},
         function (obj) {
             if ('error' in obj) {
                 console.log(obj.error);
@@ -32,8 +32,8 @@ add_ticket_form.addEventListener('submit',(event) => {
     console.log(image);
 
     if (ticket_id == null) {
-        utils.requete(
-            {function : "addBillet", arguments : [title,content]},
+        utils.requeteV2(
+            'tickets/addTicket','POST',{title:title,content:content},
             function (obj) {
                 if ('error' in obj) {
                     console.log(obj.error);
@@ -43,8 +43,8 @@ add_ticket_form.addEventListener('submit',(event) => {
             }
         )
     } else {
-        utils.requete(
-            {function : "editBillet", arguments : [ticket_id,title,content]},
+        utils.requeteV2(
+            'tickets/updateTicket','PATCH',{id:ticket_id,title:title,content:content},
             function (obj) {
                 if ('error' in obj) {
                     console.log(obj.error);

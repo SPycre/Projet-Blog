@@ -20,8 +20,8 @@ document.querySelector('#site-title').addEventListener('click',() => {
  * Display connection or disconnection form
  */
 function checkConnection() {
-    utils.requete(
-        {function:'checkConnect', arguments: [0]},
+    utils.requeteV2(
+        '/sessions/checkConnect','GET',{},
         function (obj) {
             if ('error' in obj) {
                 console.log(obj.error);
@@ -39,8 +39,8 @@ function checkConnection() {
                     form = connect_form_holder.querySelector('#form-disconnect');
                     form.addEventListener('submit',(event) => {
                         event.preventDefault();
-                        utils.requete(
-                            {function:'disconnect', arguments: [0]},
+                        utils.requeteV2(
+                            '/sessions/disconnect','POST',{},
                             function (obj) {
                                 if ('error' in obj) {
                                     console.log(obj.error);
@@ -62,8 +62,8 @@ function checkConnection() {
                         event.preventDefault();
                         const username = form.elements.username.value;
                         const password = form.elements.password.value;
-                        utils.requete(
-                            {function:'connect', arguments: [username, password]},
+                        utils.requeteV2(
+                            '/sessions/connect','POST',{username:username,password:password},
                             function (obj) {
                                 if ('error' in obj) {
                                     console.log(obj.error);
