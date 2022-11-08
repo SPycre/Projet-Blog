@@ -1,5 +1,10 @@
 import * as utils from "./utils.js";
 const connect_form_holder = document.querySelector('#connect-form-holder');
+const footer = document.querySelector('footer');
+const header = document.querySelector('header');
+const body = document.querySelector('body');
+const sectionBox = document.querySelectorAll('.section-box')
+
 
 /**
  * Connection or disconnection form
@@ -14,6 +19,72 @@ document.querySelector('#options').addEventListener('click',() => {
 document.querySelector('#site-title').addEventListener('click',() => {
     window.location.href = "index.php";
 })
+
+/** */
+
+let colorPage = utils.getCookie('colorPage');
+switch (colorPage) {
+    case 'default' :
+    footer.style.backgroundColor = "#79A3FF";
+    header.style.backgroundColor = "#79A3FF";
+    body.style.backgroundColor = "#F0F8FF"
+    break;
+
+    case 'pink' :
+    footer.style.backgroundColor = "#FF69B4"
+    header.style.backgroundColor = "#FF69B4"
+    body.style.backgroundColor = "#FFE4E1"
+    sectionBox.forEach(box => {
+        box.style.backgroundColor = "#FF69B4"
+    });
+    break;
+
+    case 'night' :
+    footer.style.backgroundColor = "#474758"
+    header.style.backgroundColor = "#474758"
+    body.style.backgroundColor = "#5A5E6B"
+    sectionBox.forEach(box => {
+        box.style.backgroundColor = "#474758"
+    });
+    break;    
+
+    case 'green' :
+    footer.style.backgroundColor = "#87E990"
+    header.style.backgroundColor = "#87E990"
+    body.style.backgroundColor = "#BDECB6"
+    sectionBox.forEach(box => {
+        box.style.backgroundColor = "#87E990"
+    });
+    break;   
+
+    case 'purple' :
+    footer.style.backgroundColor = "#9683EC"
+    header.style.backgroundColor = "#9683EC"
+    body.style.backgroundColor = "#E8EBFF"
+    sectionBox.forEach(box => {
+        box.style.backgroundColor = "#9683EC"
+    });
+    break;   
+
+    case 'coquelicot' :
+    footer.style.backgroundColor = "#C60800"
+    header.style.backgroundColor = "#C60800"
+    body.style.backgroundColor = "#E9967A"
+    sectionBox.forEach(box => {
+        box.style.backgroundColor = "#C60800"
+    });
+    break;
+
+    case 'gold' :
+    footer.style.backgroundColor = "#DAA520"
+    header.style.backgroundColor = "#DAA520"
+    body.style.backgroundColor = "#F0E68C"
+    sectionBox.forEach(box => {
+        box.style.backgroundColor = "#DAA520"
+    });
+    break;
+}
+
 
 /**
  * Check if someone is connected on this session

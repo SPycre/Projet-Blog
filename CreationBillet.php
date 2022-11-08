@@ -19,7 +19,7 @@
 
 	<main id="main">
 		<section id="central">
-			<section id="form-card"
+			<section class="section-box" id="form-card"
 					<h3>Crée un billet</h3>
 
 					<form id="add-ticket-form">

@@ -23,7 +23,7 @@
 
             <section id="central">
                 
-                <section id="ticket">
+                <section class="section-box" id="ticket">
 
                     <article id="billet-article">
                         <div id="text-billet">
@@ -59,7 +59,7 @@
 
                 <span id="subtitle">Commentaires</span>
 
-                <section id = "list-comment">
+                <section class="section-box" id = "list-comment">
                     /!\ Unable to load content /!\
                 </section>
 
@@ -71,7 +71,7 @@
                         <button class="page-select last">>|</button>
                 </section>
 
-                <section id="add-comment">
+                <section class="section-box" id="add-comment">
                     <form id="form-commentaire">
                         <div>
                             <div id ="comment-pseudo">
