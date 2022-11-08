@@ -36,7 +36,7 @@
                         <button id="add-ticket">Ajouter un billet</button>
                     </div>
                 </template>
-                <section id="liste-billets">
+                <section class="section-box" id="liste-billets">
                     <span class="billet">/!\ Unable to load content /!\</span>
                 </section>
                 <section id="page-selector">

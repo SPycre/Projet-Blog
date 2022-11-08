@@ -16,11 +16,11 @@
         </header>
         <main>
             <section id="central">
-                <section id="settings-form">
+                <section class="section-box" id="settings-form">
                     <article id="settings-article">
                         <form id="form">
                             <div>
-                                <label for="ticketsPerPage">Billets par page :</label>
+                                <label for="ticketsPerPage">Billets par page : </label>
                                 <select name='ticketsPerPage'>
                                     <option value="5">5</option>
                                     <option value="10">10</option>
@@ -28,12 +28,26 @@
                                 </select>
                             </div>
                             <div>
-                                <label for="commentsPerPage">Commentaires par page :</label>
+                                <label for="commentsPerPage">Commentaires par page : </label>
                                 <select name='commentsPerPage'>
                                     <option value="5">5</option>
                                     <option value="10">10</option>
                                     <option value="20">20</option>
                                 </select> 
+                            </div>
+                            <div>
+                                <label for="colorPage"> Couleur du site : </label>
+                                <select name='colorPage'>
+                                    <option value="default"> Default </option>
+                                    <option value="night"> Nuit </option>
+                                    <option value="pink"> Baby Pink </option>
+                                    <option value="green"> Jade </option>
+                                    <option value="purple"> Améthyste </option>
+                                    <option value="coquelicot"> Ruby </option>
+                                    <option value="gold"> Gold </option>
+                                    
+                                    
+                                </select>
                             </div>
                             <button type='submit'>Sauvegarder</button>
                         </form>
