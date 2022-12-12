@@ -2,6 +2,7 @@ import * as utils from "./utils.js";
 const add_comment_form = document.querySelector('#form-commentaire');
 const comment_list = document.querySelector('#list-comment');
 const ticket_id = new URLSearchParams(window.location.search).get('id');
+const ticket_img = document.querySelector('#billet-img');
 
 
 /**
@@ -38,7 +39,9 @@ function initTicket() {
             if ( !('error' in obj) ) {
                 document.querySelector('#titre-billet').innerHTML = obj.result['titre'];
                 document.querySelector('#contenu-billet').innerHTML = obj.result['content'];
-
+                ticket_img.innerHTML = "<img src='./Images/ticket_image/"+obj.result['image']+"' alt='Image du billet'/>";
+                lastPageNumber = Math.ceil(obj.result['comments']/commentsPerPage) -1;
+                console.log(obj.result);
             } else {
                 console.log(obj.error);
             }
@@ -79,22 +82,6 @@ function initComments(page) {
                     comment_list.append(commentNode);
                 });
                 initAdmin()
-            } else {
-                console.log(obj.error);
-            }
-        }
-    )
-}
-
-/**
- * Calculate number of displayable pages for comment list
- */
-function calculateMaxCommentPage() {
-    utils.requeteV2(
-        '/comments/countComments','GET',{billet_id:ticket_id},
-        function (obj) {
-            if ( !('error' in obj) ) {
-                lastPageNumber = Math.ceil(obj.result/commentsPerPage) - 1;
             } else {
                 console.log(obj.error);
             }
@@ -146,6 +133,14 @@ function calculateMaxCommentPage() {
                                     if ('error' in obj) {
                                         console.log(obj.error);
                                     } else {
+                                        utils.requeteV2(
+                                            '/tickets/updateComments','PATCH',{id:ticket_id},
+                                            function (obj) {
+                                                if ('error' in obj) {
+                                                    console.log(obj.error);
+                                                }
+                                            }
+                                        )
                                         initComments(numberOfPage);
                                     }
                                 }
@@ -177,8 +172,16 @@ function calculateMaxCommentPage() {
             if ('error' in obj) {
                 console.log(obj.error);
             } else {
+                utils.requeteV2(
+                    '/tickets/updateComments','PATCH',{id:ticket_id},
+                    function (obj) {
+                        if ('error' in obj) {
+                            console.log(obj.error);
+                        }
+                    }
+                )
+                initTicket();
                 initComments(0);
-                calculateMaxCommentPage();
             }
         }
     )
@@ -203,5 +206,4 @@ function calculateMaxCommentPage() {
 
 
 initTicket()
-calculateMaxCommentPage()
 initComments(0)

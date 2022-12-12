@@ -15,15 +15,11 @@
     $data = json_decode(file_get_contents("php://input"));
 
     $item -> id = $data -> id;
-    $item -> title = $data -> title;
-    $item -> content = $data -> content;
-    $item -> comments = $data -> comments;
+    
+    $rslt = $item -> updateComments();
 
-    if ($item -> updateTicket()) {
-        echo 'Ticket has been updated';
+    if ($rslt) {
+        echo $rslt->queryString;
     } else {
         echo 'Could not update ticket';
     }
-
-    
-

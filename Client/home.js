@@ -50,6 +50,8 @@ function initTickets(page) {
                     content.innerHTML = billet.content;
                     const date = billetNode.querySelector('.post-date');
                     date.innerHTML = billet.date;
+                    const comments = billetNode.querySelector('.comment-count');
+                    comments.innerHTML = billet.comments+" commentaires";
 
                     const selector = billetNode.querySelector('.selector');
                     selector.addEventListener('click',() => {

@@ -137,6 +137,11 @@
     font-weight: bold;
 }
 
+#billet-img img{
+    width: 100%;
+    border-radius: 15px;
+}
+
 #form-commentaire>div {
     display: flex;
     flex-direction: row;
