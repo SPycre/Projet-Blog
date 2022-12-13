@@ -9,7 +9,6 @@
     font-weight: bold;
     padding: 10px 15px;
     border: 0px;
-    border-radius: 30px;
 }
 
 #add-ticket:hover {
@@ -20,7 +19,6 @@
     background-color: rgb(235,235,235);
     margin: 30px;
     padding: 20px 30px;
-    border-radius: 15px;
 }
 
 #page-selector {
@@ -29,7 +27,6 @@
     background-color: rgb(235,235,235);
     margin: 10px 40%;
     padding: 10px;
-    border-radius: 15px;
     display: flex;
     justify-content: space-around;
 }
@@ -43,7 +40,6 @@
 
 .billet {
     background-color: white;
-    border-radius: 10px;
     box-shadow: 3px 5px rgb(0 0 0 / 20%);
 }
 

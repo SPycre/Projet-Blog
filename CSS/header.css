@@ -22,7 +22,6 @@ header #options {
 
 #site-title {
     padding: 5px 5px;
-    border-radius: 10px;
 }
 
 #site-title:hover {
@@ -49,7 +48,6 @@ header .input-div input {
     padding: 5px 10px;
     margin-left: 5px;
     border: 0px;
-    border-radius: 30px;
 }
 
 header input:focus {
@@ -63,7 +61,6 @@ header .input-div button {
     font-weight: bold;
     padding: 5px 10px;
     border: 0px;
-    border-radius: 30px;
 }
 
 header #form-disconnect button {
@@ -71,7 +68,6 @@ header #form-disconnect button {
     font-weight: bold;
     padding: 5px 10px;
     border: 0px;
-    border-radius: 30px;
 }
 
 header #form-disconnect button:hover {
