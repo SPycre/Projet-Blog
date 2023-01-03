@@ -73,21 +73,20 @@
                         <button class="page-select last">>|</button>
                 </section>
 
-                <section class="section-box" id="add-comment">
+                <section id="add-comment">
+
                     <form id="form-commentaire">
                         <div>
                             <div id ="comment-pseudo">
                                 <label for="pseudo">Pseudo</label>
                                 <input type="text" id="pseudo" name="pseudo" placeholder="Votre pseudo" required>
-                            </div>
-                            <div id="comment-content">
                                 <label for="commentaire">Commentaire</label>
                                 <textarea id="comment" input="text" name="comment" rows="1" placeholder="Votre commentaire" required></textarea>
+
                             </div>
+
                         </div>
-                        <div>
-                            <button type="submit">Envoyer</button>
-                        </div>
+                        <button id="submit-comment" type="submit" value="Envoyer"> Envoyer </button>
                     </form>
                 </section>
 
