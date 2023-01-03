@@ -20,9 +20,3 @@ main {
     display: flex;
     justify-content: center;
 }
-
-footer{
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}

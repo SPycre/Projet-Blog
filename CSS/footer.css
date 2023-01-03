@@ -12,13 +12,16 @@ p{
 }
 
 footer{
-    background-color: rgb(121, 163, 255);
-    padding: 10px;
+    background-color: rgb(121, 163, 255); 
     text-align: center;
     display: flex;
     flex-direction: column;
     color: aliceblue;
     font-family: Arial, Helvetica, sans-serif;
+    position: fixed;
+    font-size:1vw;
+    bottom: 0;
+    width: 100%;
 }
 
 h1{

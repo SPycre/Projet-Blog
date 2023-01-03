@@ -4,8 +4,6 @@ header {
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(121, 163, 255);
-    margin: auto;
-    padding: 10px;
     font-weight: bold;
 }
 
