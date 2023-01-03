@@ -10,15 +10,11 @@ const sectionBox = document.querySelectorAll('.section-box')
  * Connection or disconnection form
  * @type {HTMLFormElement}
  */
-let form;
 
-document.querySelector('#options').addEventListener('click',() => {
-    window.location.href = "options.php";
+document.querySelector('#burger').addEventListener('click',() => {
+    document.querySelector('#burger').classList.toggle('open');
+    document.querySelector('.burgermenu').classList.toggle('open');
 });
-
-document.querySelector('#site-title').addEventListener('click',() => {
-    window.location.href = "index.php";
-})
 
 /** */
 
@@ -102,6 +98,7 @@ function checkConnection() {
                 }
 
                 if (obj.result != false) {
+                    /*
                     form = document.querySelector('#form-disconnect-template').content.cloneNode(true);
                     const user_name = form.querySelector('#name-user');
                     user_name.innerHTML = "Bienvenue, " + obj.result +'!';
@@ -123,8 +120,10 @@ function checkConnection() {
                     })
 
                     connect_form_holder.append(form);
+                    */
 
                 } else {
+                    /*
                     form = document.querySelector('#form-connection-template').content.cloneNode(true);
                     connect_form_holder.append(form);
 
@@ -144,7 +143,7 @@ function checkConnection() {
                             }
                         )
                     });
-                    
+                    */
                     
                 }
             }

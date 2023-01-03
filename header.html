@@ -1,19 +1,26 @@
 
 <script type="module" src="Client/header.js" defer></script>
 
-<div id="title-handler">
-    <span id="site-title">
+<div class="element-header" id="website-title">
         WonsungiBlog
-    </span>
-    <img src="Images/gear.png" id="options">
 </div>
 
-<div id="page-title">
+<div class="element-header" id="page-title">
     Titre page
 </div>
-<div id="connect-form-holder">
 
+<div class="element-header" id="burger-holder">
+    <img src="Images/burger.png" id="burger">
 </div>
+
+<div class="burgermenu">
+    <a href="index.php">Accueil</a>
+    <hr>
+    <a href="connect.php">Connexion</a>
+    <hr>
+    <a href="options.php">Paramètres</a>
+</div>
+
 <template id="form-disconnect-template"> 
     <form id="form-disconnect">
         <span id="name-user">Welcome, user_name!</span>

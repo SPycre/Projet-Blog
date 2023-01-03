@@ -27,8 +27,6 @@ let lastPageNumber = 1;
 
 document.querySelector('#page-title').innerHTML = "Billet"
 
-
-
 /**
  * Display tickets details
  */
@@ -39,9 +37,10 @@ function initTicket() {
             if ( !('error' in obj) ) {
                 document.querySelector('#titre-billet').innerHTML = obj.result['titre'];
                 document.querySelector('#contenu-billet').innerHTML = obj.result['content'];
-                ticket_img.innerHTML = "<img src='./Images/ticket_image/"+obj.result['image']+"' alt='Image du billet'/>";
+                if (obj.result['image'] != null) {
+                    ticket_img.innerHTML = "<img src='./Images/ticket_image/"+obj.result['image']+"' alt='Image du billet'/>";
+                }
                 lastPageNumber = Math.ceil(obj.result['comments']/commentsPerPage) -1;
-                console.log(obj.result);
             } else {
                 console.log(obj.error);
             }
