@@ -11,6 +11,8 @@ class Ticket {
     public $title;
     public $content;
     public $date;
+    public $comments; 
+    public $image;
 
     public function __construct($db) {
         $this -> conn = $db;
@@ -28,12 +30,18 @@ class Ticket {
     }
     // CREATE
     public function createTicket() {
-        $stmt = $this -> conn -> prepare("INSERT INTO ". $this -> db_table ."(titre,content) VALUES (:title, :content)");
+        $stmt = $this -> conn -> prepare("INSERT INTO ". $this -> db_table ." (titre,content,comments) VALUES (:title, :content, 0)");
 
         $stmt -> bindParam(":title", $this -> title, PDO::PARAM_STR);
         $stmt -> bindParam(":content", $this -> content, PDO::PARAM_STR);
 
         $stmt -> execute();
+
+        $stmt2 = $this -> conn -> prepare("SELECT id FROM ". $this -> db_table ." ORDER BY id DESC LIMIT 0,1");
+        $stmt2 -> execute();
+        $result = $stmt2 -> fetchColumn();
+
+        $this -> id = $result;
 
         return $stmt;
     }
@@ -49,10 +57,30 @@ class Ticket {
     }
     // UPDATE
     public function updateTicket() {
-        $stmt = $this -> conn -> prepare("UPDATE ". $this -> db_table ." SET titre = :title, content = :content WHERE id = :id");
+        $stmt = $this -> conn -> prepare("UPDATE ". $this -> db_table ." SET titre = :title, content = :content, image = :image WHERE id = :id");
 
         $stmt -> bindParam(":title", $this -> title, PDO::PARAM_STR);
         $stmt -> bindParam(":content", $this -> content, PDO::PARAM_STR);
+        $stmt -> bindParam(":id", $this -> id, PDO::PARAM_INT);
+        $stmt -> bindParam(":image", $this -> image, PDO::PARAM_STR);
+
+        $stmt -> execute();
+
+        return $stmt;
+    }
+    //UPDATE COMMENTS
+    public function updateComments() {
+        $stmt = $this -> conn -> prepare('SELECT COUNT(*) FROM commentaire WHERE billet_id = :billet_id');
+
+        $stmt -> bindParam(":billet_id", $this -> id, PDO::PARAM_INT);
+
+        $stmt -> execute();
+
+        $this -> comments = $stmt -> fetchColumn();
+
+        $stmt = $this -> conn -> prepare("UPDATE ". $this -> db_table ." SET comments = :comments WHERE id = :id");
+
+        $stmt -> bindParam(":comments", $this -> comments, PDO::PARAM_INT);
         $stmt -> bindParam(":id", $this -> id, PDO::PARAM_INT);
 
         $stmt -> execute();

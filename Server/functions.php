@@ -80,18 +80,6 @@ $functions['addComment'] = function($arguments) {
     $statement -> execute();
 };
 
-$functions['countComments'] = function($arguments) {
-    $db = connectDb('root','root');
-    $statement = $db -> prepare('SELECT COUNT(*) FROM commentaire WHERE billet_id = :id');
-
-    $statement -> bindValue(':id',$arguments[0]);
-
-    $statement -> execute();
-    $result = $statement -> fetchAll();
-
-    return $result[0][0];
-};
-
 $functions['getComments'] = function($arguments) {
     $db = connectDb('root','root');
     $statement = $db -> prepare('SELECT * FROM commentaire WHERE billet_id = :id ORDER BY date DESC LIMIT :offset , :count');
