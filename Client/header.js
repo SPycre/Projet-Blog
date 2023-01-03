@@ -1,5 +1,4 @@
 import * as utils from "./utils.js";
-const connect_form_holder = document.querySelector('#connect-form-holder');
 const footer = document.querySelector('footer');
 const header = document.querySelector('header');
 const body = document.querySelector('body');
@@ -10,15 +9,11 @@ const sectionBox = document.querySelectorAll('.section-box')
  * Connection or disconnection form
  * @type {HTMLFormElement}
  */
-let form;
 
-document.querySelector('#options').addEventListener('click',() => {
-    window.location.href = "options.php";
+document.querySelector('#burger').addEventListener('click',() => {
+    document.querySelector('#burger').classList.toggle('open');
+    document.querySelector('.burgermenu').classList.toggle('open');
 });
-
-document.querySelector('#site-title').addEventListener('click',() => {
-    window.location.href = "index.php";
-})
 
 /** */
 
@@ -97,19 +92,13 @@ function checkConnection() {
             if ('error' in obj) {
                 console.log(obj.error);
             } else {
-                if (form != null) {
-                    form.remove();
-                }
 
-                if (obj.result != false) {
-                    form = document.querySelector('#form-disconnect-template').content.cloneNode(true);
-                    const user_name = form.querySelector('#name-user');
-                    user_name.innerHTML = "Bienvenue, " + obj.result +'!';
-                    connect_form_holder.append(form);
+                if (obj.result) {
+                    
+                    let logout = document.querySelector('#connect-button');
+                    logout.innerHTML = "<a href='#'>Déconnexion</a>"
 
-                    form = connect_form_holder.querySelector('#form-disconnect');
-                    form.addEventListener('submit',(event) => {
-                        event.preventDefault();
+                    logout.addEventListener('click',() => {
                         utils.requeteV2(
                             '/sessions/disconnect','POST',{},
                             function (obj) {
@@ -120,31 +109,10 @@ function checkConnection() {
                                 }
                             }
                         )
-                    })
-
-                    connect_form_holder.append(form);
+                    });
 
                 } else {
-                    form = document.querySelector('#form-connection-template').content.cloneNode(true);
-                    connect_form_holder.append(form);
-
-                    form = connect_form_holder.querySelector('#form-connection');
-                    form.addEventListener('submit',(event) => {
-                        event.preventDefault();
-                        const username = form.elements.username.value;
-                        const password = form.elements.password.value;
-                        utils.requeteV2(
-                            '/sessions/connect','POST',{username:username,password:password},
-                            function (obj) {
-                                if ('error' in obj) {
-                                    console.log(obj.error);
-                                } else {
-                                    window.location.href = window.location.href;
-                                }
-                            }
-                        )
-                    });
-                    
+                    document.querySelector('#connect-button').innerHTML = "<a href='login.php'>Connexion</a>"
                     
                 }
             }

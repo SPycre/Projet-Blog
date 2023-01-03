@@ -1,10 +1,9 @@
 
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     background-color: rgb(121, 163, 255);
     margin: auto;
+    display: flex;
+    justify-content: space-between;
     font-weight: bold;
 }
 
@@ -13,99 +12,51 @@ header #options {
     margin: 15px;
 }
 
-#title-handler {
-    display: flex;
+header #burger {
+    height: 40px;
+    margin: 15px;
+}
+
+header .burgermenu {
+    transition-duration: 0.5s;
+    top:70px;
+    width: 100px;
+    position: fixed;
+    right: -120px;
+    background-color: white;
+    padding: 10px;
+}
+
+header .burgermenu a {
+    color: black;
+}
+
+header .element-header {
+    width: 30%;
+}
+
+header .open {
+    transition-duration: 0.5s;
+    right: 0px;
+}
+
+#website-title {
+    justify-content: flex-start;
     align-items: center;
-    font-size: 45px;
+    display: flex;
+    font-size: 35px;
     padding-left: 15px;
 }
 
-#site-title {
-    padding: 5px 5px;
-}
-
-#site-title:hover {
-    color: rgb(220, 220, 220);
-}
-
 #page-title {
-    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
     display: flex;
-    align-items: flex-end;
     font-size: 35px;
 }
 
-header .input-div {
-    display: flex;
+#burger-holder {
     justify-content: flex-end;
-    padding: 5px 0px;
     align-items: center;
-}
-
-header .input-div input {
-    transition-duration:.5s;
-    background-color: rgb(255, 255, 255);
-    padding: 5px 10px;
-    margin-left: 5px;
-    border: 0px;
-}
-
-header input:focus {
-    outline: none;
-    transition-duration:.5s;
-    background-color: rgb(220, 220, 220);
-}
-
-header .input-div button {
-    background-color: rgb(255, 255, 255);
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 0px;
-}
-
-header #form-disconnect button {
-    background-color: rgb(255, 255, 255);
-    font-weight: bold;
-    padding: 5px 10px;
-    border: 0px;
-}
-
-header #form-disconnect button:hover {
-    background-color: rgb(220, 220, 220);
-}
-
-header #form-disconnect {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-end;
-}
-
-header #connect-form-holder {
     display: flex;
 }
-
-header #name-user {
-    font-size:35px;
-}
-
-header .input-div button:hover {
-    background-color: rgb(220, 220, 220);
-}
-
-#options:hover{
-    animation: rotating 1.5s;
-    animation-iteration-count: infinite;
-  } 
-
-@keyframes rotating {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  }
-  .rotating {
-    animation: rotating 2s linear infinite;
-  }

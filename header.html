@@ -1,37 +1,29 @@
 
 <script type="module" src="Client/header.js" defer></script>
 
-<div id="title-handler">
-    <span id="site-title">
-        WonsungiBlog
-    </span>
-    <img src="Images/gear.png" id="options">
+<div class="element-header" id="website-title">
+    ❤ UwU Blog ❤
 </div>
 
-<div id="page-title">
+<div class="element-header" id="page-title">
     Titre page
 </div>
-<div id="connect-form-holder">
 
+<div class="element-header" id="burger-holder">
+    <img src="Images/burger.png" id="burger">
 </div>
+
+<div class="burgermenu">
+    <a href="index.php">Accueil</a>
+    <hr>
+    <span id="connect-button">
+    </span>
+    <hr>
+    <a href="options.php">Paramètres</a>
+</div>
+
 <template id="form-disconnect-template"> 
     <form id="form-disconnect">
-        <span id="name-user">Welcome, user_name!</span>
         <button id="disconnect">Deconnexion</button>
-    </form>
-</template>
-<template id="form-connection-template">
-    <form id="form-connection">
-        <div class="input-div">
-            <label for="username">Pseudo</label>
-            <input name="username" type="text"/>
-        </div>
-        <div class="input-div">
-            <label for="password">Mot de passe</label>
-            <input name="password" type="password"/>
-        </div>
-        <div class="input-div">
-            <button id="connect">Connexion</button>
-        </div>
     </form>
 </template>
