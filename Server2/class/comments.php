@@ -18,11 +18,11 @@ class Comment {
     }
     // GET
     public function getComments() {
-        $stmt = $this -> conn -> prepare('SELECT * FROM '. $this -> db_table .' WHERE billet_id = :billet_id');
+        $stmt = $this -> conn -> prepare('SELECT * FROM '. $this -> db_table .' WHERE billet_id = :billet_id ORDER BY date DESC LIMIT :page, :count');
 
         $stmt -> bindParam(":billet_id", $this -> billet_id, PDO::PARAM_INT);
-        //$stmt -> bindParam(":page", $this -> page, PDO::PARAM_INT);
-        //$stmt -> bindParam(":count", $this -> count, PDO::PARAM_INT);
+        $stmt -> bindParam(":page", $this -> page, PDO::PARAM_INT);
+        $stmt -> bindParam(":count", $this -> count, PDO::PARAM_INT);
 
         $stmt -> execute();
 

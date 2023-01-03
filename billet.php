@@ -35,6 +35,8 @@
                                 </div>
                             </div>
                             <span id="contenu-billet">Content</span>
+                            <div id="billet-img">
+                            </div>
                         </div>
 
                         <div id="detail-billet">
