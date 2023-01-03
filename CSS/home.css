@@ -44,6 +44,7 @@
 .billet {
     background-color: white;
     border-radius: 10px;
+    box-shadow: 3px 5px rgb(0 0 0 / 20%);
 }
 
 .selector {

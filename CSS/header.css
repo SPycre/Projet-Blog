@@ -4,6 +4,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     background-color: rgb(121, 163, 255);
+    margin: auto;
     font-weight: bold;
 }
 
@@ -99,7 +100,6 @@ header .input-div button:hover {
 #options:hover{
     animation: rotating 1.5s;
     animation-iteration-count: infinite;
-    
   } 
 
 @keyframes rotating {

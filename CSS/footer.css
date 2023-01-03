@@ -8,11 +8,11 @@ p{
     display: flex;
     flex-direction: row;
     font-size: 0.6em;
-    justify-content: center
+    justify-content: center;
 }
 
-footer{
-    background-color: rgb(121, 163, 255); 
+footer {
+    background-color: rgb(121, 163, 255);
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -22,6 +22,16 @@ footer{
     font-size:1vw;
     bottom: 0;
     width: 100%;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover{
+    color: #d3d3d3;
+    transition-duration: 0.3s;
 }
 
 h1{
