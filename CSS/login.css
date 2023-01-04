@@ -6,77 +6,6 @@
 	box-sizing: border-box;
 }
 
-body, html {
-	height: 100%;
-	font-family: Poppins-Regular, sans-serif;
-}
-
-/*---------------------------------------------*/
-a {
-	font-family: Poppins-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-	transition: all 0.4s;
-	-webkit-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-}
-
-a:focus {
-	outline: none !important;
-}
-
-a:hover {
-	text-decoration: none;
-  color: #fff;
-}
-
-/*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
-	margin: 0px;
-}
-
-p {
-	font-family: Poppins-Regular;
-	font-size: 14px;
-	line-height: 1.7;
-	color: #666666;
-	margin: 0px;
-}
-
-ul, li {
-	margin: 0px;
-	list-style-type: none;
-}
-
-
-/*---------------------------------------------*/
-input {
-	outline: none;
-	border: none;
-}
-
-textarea {
-  outline: none;
-  border: none;
-}
-
-textarea:focus, input:focus {
-  border-color: transparent !important;
-}
-
-input::-webkit-input-placeholder { color: #fff;}
-input:-moz-placeholder { color: #fff;}
-input::-moz-placeholder { color: #fff;}
-input:-ms-input-placeholder { color: #fff;}
-
-textarea::-webkit-input-placeholder { color: #fff;}
-textarea:-moz-placeholder { color: #fff;}
-textarea::-moz-placeholder { color: #fff;}
-textarea:-ms-input-placeholder { color: #fff;}
-
 label {
   margin: 0;
   display: block;
@@ -92,19 +21,7 @@ button:hover {
 	cursor: pointer;
 }
 
-.txt1 {
-  font-family: Arial;
-  font-size: 13px;
-  color: #e5e5e5;
-  line-height: 1.5;
-}
-
-.tour {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.container-login100 {
+#central {
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;
@@ -124,19 +41,7 @@ button:hover {
   z-index: 1;
 }
 
-.container-login100::before {
-  content: "";
-  display: block;
-  position: absolute;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(255,255,255,0.9);
-}
-
-.wrap-login100 {
+#login-box {
   width: 500px;
   border-radius: 10px;
   overflow: hidden;
@@ -146,11 +51,11 @@ button:hover {
 }
 
 
-.login100-form {
+#login-form {
   width: 100%;
 }
 
-.login100-form-title {
+#login-form-title {
   font-family: Arial;
   font-size: 30px;
   color: #fff;
@@ -161,14 +66,9 @@ button:hover {
   display: block;
 }
 
-.wrap-input100 {
-  width: 100%;
-  position: relative;
-  border-bottom: 2px solid rgba(255,255,255,0.24);
-  margin-bottom: 30px;
-}
-
-.input100 {
+input {
+  outline: none;
+  border: none;
   font-family: Arial;
   font-size: 16px;
   color: #fff;
@@ -181,7 +81,14 @@ button:hover {
   padding: 0 5px 0 38px;
 }
 
-.focus-input100 {
+.input-div {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid rgba(255,255,255,0.24);
+  margin-bottom: 30px;
+}
+
+.input-focus {
   font-family: Material-Design-Iconic-Font;
   position: absolute;
   display: block;
@@ -192,7 +99,7 @@ button:hover {
   pointer-events: none;
 }
 
-.focus-input100::before {
+.input-focus::before {
   content: "";
   display: block;
   position: absolute;
@@ -209,7 +116,7 @@ button:hover {
   background: #fff;
 }
 
-.focus-input100::after {
+.input-focus::after {
   font-size: 22px;
   color: #fff;
 
@@ -227,44 +134,27 @@ button:hover {
   transition: all 0.4s;
 }
 
-.input100:focus {
+input:focus {
   padding-left: 5px;
 }
 
-.input100:focus + .focus-input100::after {
+input:focus + .input-focus::after {
   top: -22px;
   font-size: 18px;
 }
 
-.input100:focus + .focus-input100::before {
+input:focus + .input-focus::before {
   width: 100%;
 }
 
-.has-val.input100 + .focus-input100::after {
-  top: -22px;
-  font-size: 18px;
-}
-
-.has-val.input100 + .focus-input100::before {
-  width: 100%;
-}
-
-.has-val.input100 {
-  padding-left: 5px;
-}
-
-.container-login100-form-btn {
+#div-button {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
 
-/*--------*/
-/* Button */
-/*--------*/
-
-.login100-form-btn {
+#login-button {
   font-size: 16px;
   color: #555555;
 
@@ -279,26 +169,9 @@ button:hover {
   font-family: Arial;
 }
 
-.login100-form-btn:hover{
+#login-button:hover{
   background-color: #236cd9;
   color:white;
   font-family: Arial;
   transition-duration: 0.25s;
-}
-
-/*------------*/
-/* Changement */
-/*------------*/
-
-@media (max-width: 576px) {
-  .wrap-login100 {
-    padding: 55px 15px 37px 15px;
-  }
-}
-
-@media (max-width: 992px) {
-  .alert-validate::before {
-    visibility: visible;
-    opacity: 1;
-  }
 }

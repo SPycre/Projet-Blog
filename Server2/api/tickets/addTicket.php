@@ -16,7 +16,6 @@
     $item -> content = $_POST['content'];
 
     if ($item -> createTicket()) {
-        var_dump($_FILES['addImage']['size']);
         if ($_FILES['addImage']['size'] != 0) {
             move_uploaded_file($_FILES['addImage']['tmp_name'], '../../../Images/ticket_image/' . $item -> id . '.jpg');
             $item -> image = $item -> id . '.jpg';

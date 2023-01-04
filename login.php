@@ -4,42 +4,40 @@
 	<title>Log in</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
 
+	<script type="module" src="Client/login.js" defer></script>
 </head>
 <body>
-	
-	<div class="tour">
-		<div class="container-login100">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+	<main>
+		<section id="central">
+			<div id="login-box">
+				<form id="login-form">
 
-					<span class="login100-form-title">
-						Log in
-					</span>
+						<span id="login-form-title">
+							Log in
+						</span>
 
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="text" name="username" placeholder="Username">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
-					</div>
+						<div class="input-div">
+							<input type="text" name="username" placeholder="Username">
+							<span class="input-focus" data-placeholder="&#xf207;"></span>
+						</div>
 
-					<div class="wrap-input100 validate-input">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>
+						<div class="input-div">
+							<input type="password" name="password" placeholder="Password">
+							<span class="input-focus" data-placeholder="&#xf191;"></span>
+						</div>
 
-					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
-							Login
-						</button>
-					</div>
+						<div id="div-button">
+							<button id="login-button">
+								Login
+							</button>
+						</div>
 
 				</form>
 			</div>
-		</div>
-	</div>
-
+		</section>
+	</main>
 </body>
 </html>
