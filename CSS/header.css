@@ -32,7 +32,8 @@ header .burgermenu a {
 }
 
 header .element-header {
-    width: 30%;
+    width: 25%;
+    padding: 0px 15px;
 }
 
 header .open {
@@ -45,7 +46,6 @@ header .open {
     align-items: center;
     display: flex;
     font-size: 35px;
-    padding-left: 15px;
 }
 
 #page-title {
