@@ -14,6 +14,7 @@
 
     $item -> title = $_POST['title'];
     $item -> content = $_POST['content'];
+    $result = [];
 
     if ($item -> createTicket()) {
         if ($_FILES['addImage']['size'] != 0) {
@@ -21,13 +22,15 @@
             $item -> image = $item -> id . '.jpg';
             var_dump($item -> image);
             if ($item -> updateTicket()) {
-                echo 'Ticket has been added';
+                $result['result'] = TRUE;
             } else {
-                echo 'Could not add ticket';
+                $result['result'] = FALSE;
             }
         } else {
-            echo 'Ticket has been added';
+            $result['result'] = TRUE;
         }
     } else {
-        echo 'Could not add ticket';
+        $result['result'] = FALSE;
     }
+
+    echo json_encode($result);

@@ -35,7 +35,17 @@ add_ticket_form.addEventListener('submit',(event) => {
         fetch('./Server2/api/tickets/addTicket.php', {
             method: 'POST',
             body: form
-        })
+        }).then(function(response) {
+            return response.json();
+        }).then((obj) => {
+            if ('error' in obj) {
+                console.log(obj.error);
+            } else {
+                if (obj.result != false) {
+                    window.location.href = "index.php";
+                }
+            }
+        });
     } else {
         utils.requeteV2(
             '/tickets/updateTicket','PATCH',{id:ticket_id,title:title,content:content},
