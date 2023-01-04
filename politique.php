@@ -5,6 +5,7 @@
     <title>Projet de Blog</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="module" src="Client/billet.js" defer></script>
+    <script type="module" src="Client/button.js" defer></script>
 
     <link href="CSS/header.css" rel="stylesheet"/>
     <link href="CSS/main.css" rel="stylesheet"/>
@@ -21,6 +22,12 @@
 
 
 <main>
+
+    
+    <div class="btn section-box">
+        <img src="Images/arrow.png" class="icone">
+    </div>
+
     <div class="PageMention">
 
         <h1> Politique de confidentialité </h1>

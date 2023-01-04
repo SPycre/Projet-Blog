@@ -5,10 +5,10 @@ p{
 #hyper-text-footer{
     text-decoration: none;
     text-align: center;
-    display: flex;
-    flex-direction: row;
-    font-size: 0.6em;
+    font-size: large;
+    font-family: Arial;
     justify-content: center;
+    padding: 5px;
 }
 
 footer {
@@ -17,7 +17,7 @@ footer {
     display: flex;
     flex-direction: column;
     color: aliceblue;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial;
     position: fixed;
     font-size:1vw;
     bottom: 0;
@@ -27,6 +27,8 @@ footer {
 a{
     text-decoration: none;
     color: #ffffff;
+    padding: 5px;
+    
 }
 
 a:hover{
@@ -35,6 +37,7 @@ a:hover{
 }
 
 h1{
+    
     margin-left: 15px;
     margin-bottom: 0px;
 }

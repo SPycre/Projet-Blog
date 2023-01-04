@@ -35,31 +35,8 @@
            Hébergeur : </br>
            </p>
 
-
            <p>
-           <strong> 2. Conditions générales d’utilisation du site et des services proposés </strong>
-           </br></br>
-           L’utilisation du site Arobase Prime SAS implique l’acceptation pleine et entière des conditions générales d’utilisation ci-après décrites. Ces conditions d’utilisation sont susceptibles d’être modifiées ou complétées à tout moment, les utilisateurs du site Arobase Prime SAS sont donc invités à les consulter de manière régulière.
-
-           Ce site est normalement accessible à tout moment aux utilisateurs. Une interruption pour raison de maintenance technique peut être toutefois décidée par Arobase Prime SAS, qui s’efforcera alors de communiquer préalablement aux utilisateurs les dates et heures de l’intervention.
-
-           Le site Arobase Prime SAS est mis à jour régulièrement par Arobase Prime SAS. De la même façon, les mentions légales peuvent être modifiées à tout moment : elles s’imposent néanmoins à l’utilisateur qui est invité à s’y référer le plus souvent possible afin d’en prendre connaissance.
-           </p>
-
-
-           <p>
-           <strong> 3. Description des services fournis </strong>
-           </br></br>
-           Le site Arobase Prime SAS a pour objet de fournir une information concernant l’ensemble des activités de la société.
-
-           Arobase Prime SAS s’efforce de fournir sur le site Arobase Prime SAS des informations aussi précises que possible. Toutefois, il ne pourra être tenu responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu’elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.
-
-           Tous les informations indiquées sur le site Arobase Prime SAS sont données à titre indicatif, et sont susceptibles d’évoluer. Par ailleurs, les renseignements figurant sur le site Arobase Prime SAS ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.
-           </p>
-
-
-           <p>
-           <strong> 4. Limitations contractuelles sur les données techniques </strong>
+           <strong> 2. Limitations contractuelles sur les données techniques </strong>
            <br></br>
            Le site utilise la technologie JavaScript.
 
@@ -67,33 +44,11 @@
            </p>
 
            <p>
-           <strong> 5. Propriété intellectuelle et contrefaçons </strong>
-           </br></br>
-           Arobase Prime SAS est propriétaire des droits de propriété intellectuelle ou détient les droits d’usage sur tous les éléments accessibles sur le site, notamment les textes, images, graphismes, logo, icônes, sons, logiciels.
-
-           Toute reproduction, représentation, modification, publication, adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de : Arobase Prime SAS.
-
-           Toute exploitation non autorisée du site ou de l’un quelconque des éléments qu’il contient sera considérée comme constitutive d’une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
-           </p>
-
-
-           <p>
-           <strong> 6. Limitations de responsabilité </strong>
-           </br></br>
-           Arobase Prime SAS ne pourra être tenu responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site Arobase Prime SAS, et résultant soit de l’utilisation d’un matériel ne répondant pas aux spécifications indiquées au point 4, soit de l’apparition d’un bug ou d’une incompatibilité.
-
-           Arobase Prime SAS ne pourra également être tenue responsable des dommages indirects (tels par exemple qu’une perte de marché ou perte d’une chance) consécutifs à l’utilisation du site Arobase Prime SAS.
-
-           Des espaces interactifs (possibilité de poser des questions dans l’espace contact) sont à la disposition des utilisateurs. Arobase Prime SAS se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données. Le cas échéant, Arobase Prime SAS se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie…).
-           </p>
-
-
-           <p>
-           <strong> 7. Gestion des données personnelles </strong>
+           <strong> 3. Gestion des données personnelles </strong>
            </br></br>
            En France, les données personnelles sont notamment protégées par la loi n° 78-87 du 6 janvier 1978, la loi n° 2004-801 du 6 août 2004, l'article L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995.
 
-           A l'occasion de l'utilisation du site Arobase Prime SAS, peuvent êtres recueillies : l'URL des liens par l'intermédiaire desquels l'utilisateur a accédé au site Arobase Prime SAS, le fournisseur d'accès de l'utilisateur, l'adresse de protocole Internet (IP) de l'utilisateur.
+           A l'occasion de l'utilisation du site BraBlog, peuvent êtres recueillies : l'URL des liens par l'intermédiaire desquels l'utilisateur a accédé au site Arobase Prime SAS, le fournisseur d'accès de l'utilisateur, l'adresse de protocole Internet (IP) de l'utilisateur.
 
            En tout état de cause Arobase Prime SAS ne collecte des informations personnelles relatives à l'utilisateur que pour le besoin de certains services proposés par le site Arobase Prime SAS. L'utilisateur fournit ces informations en toute connaissance de cause, notamment lorsqu'il procède par lui-même à leur saisie. Il est alors précisé à l'utilisateur du site Arobase Prime SAS l’obligation ou non de fournir ces informations.
 
@@ -108,11 +63,9 @@
 
 
            <p>
-           <strong> 8. Liens hypertextes et cookies </strong>
+           <strong> 4. Liens hypertextes et cookies </strong>
            </br></br>
-           Le site Arobase Prime SAS contient un certain nombre de liens hypertextes vers d’autres sites, mis en place avec l’autorisation de Arobase Prime SAS. Cependant, Arobase Prime SAS n’a pas la possibilité de vérifier le contenu des sites ainsi visités, et n’assumera en conséquence aucune responsabilité de ce fait.
-
-           La navigation sur le site Arobase Prime SAS est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. Un cookie est un fichier de petite taille, qui ne permet pas l’identification de l’utilisateur, mais qui enregistre des informations relatives à la navigation d’un ordinateur sur un site. Les données ainsi obtenues visent à faciliter la navigation ultérieure sur le site, et ont également vocation à permettre diverses mesures de fréquentation.
+           La navigation sur le site BraBlog est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur. Un cookie est un fichier de petite taille, qui ne permet pas l’identification de l’utilisateur, mais qui enregistre des informations relatives à la navigation d’un ordinateur sur un site. Les données ainsi obtenues visent à faciliter la navigation ultérieure sur le site, et ont également vocation à permettre diverses mesures de fréquentation.
 
            Le refus d’installation d’un cookie peut entraîner l’impossibilité d’accéder à certains services. L’utilisateur peut toutefois configurer son ordinateur de la manière suivante, pour refuser l’installation des cookies :
 
@@ -122,28 +75,18 @@
            Sous Chrome : Cliquez en haut à droite du navigateur sur le pictogramme de menu (symbolisé par trois lignes horizontales). Sélectionnez Paramètres. Cliquez sur Afficher les paramètres avancés. Dans la section "Confidentialité", cliquez sur préférences. Dans l'onglet "Confidentialité", vous pouvez bloquer les cookies.
            </p>
 
-
            <p>
-           <strong> 9. Droit applicable et attribution de juridiction </strong>
-           </br></br>
-           Tout litige en relation avec l’utilisation du site .... est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de Paris.
-           </p>
-
-
-           <p>
-           <strong> 10. Les principales lois concernées </strong>
+           <strong> 5. Les principales lois concernées </strong>
            </br></br>
            Loi n° 78-17 du 6 janvier 1978, notamment modifiée par la loi n° 2004-801 du 6 août 2004 relative à l'informatique, aux fichiers et aux libertés.
-
            Loi n° 2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique.
            </p>
 
 
            <p>
-           <strong> 11. Lexique </strong>
+           <strong> 6. Lexique </strong>
            </br></br>
            Utilisateur : Internaute se connectant, utilisant le site susnommé.
-
            Informations personnelles : « les informations qui permettent, sous quelque forme que ce soit, directement ou non, l'identification des personnes physiques auxquelles elles s'appliquent » (article 4 de la loi n° 78-17 du 6 janvier 1978).
            </p>
     </div>
