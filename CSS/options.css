@@ -27,6 +27,28 @@
     flex-direction: row;
 }
 
+#settings-article button {
+    width: 100px;
+    align-self: center;
+    border: none;
+    outline: none;
+    padding: 5px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#settings-article button:hover {
+    background-color: rgb(220,220,220);
+}
+
+select {
+    border: none;
+    outline: none;
+    background-color: rgb(235,235,235);
+    padding: 5px;
+    border-radius: 5px;
+}
+
 label{
     padding-right: 5px ;    
 }
