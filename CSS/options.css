@@ -2,7 +2,6 @@
     background-color: rgb(235,235,235);
     margin: 30px;
     padding: 20px 30px;
-    border-radius: 15px;
 }
 
 #settings-form form {
@@ -18,7 +17,6 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border-radius: 10px;
     font-weight: bold;
     color: black;
 }

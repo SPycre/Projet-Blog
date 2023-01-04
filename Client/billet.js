@@ -53,11 +53,12 @@ function initTicket() {
  * Display selected page of comments under the ticket
  * @param {int} page Index of the comments page to display
  */
-function initComments(page) { 
+function initComments(page) {
     utils.requeteV2(
         '/comments/getComments','GET',{billet_id:ticket_id,page:page*commentsPerPage,count:commentsPerPage},
         function (obj) {
             if ( !('error' in obj) ) {
+                console.log(obj.result);
                 comment_list.innerHTML = "";
                 numberOfPage = page;
                 document.querySelector('#page-number').innerHTML = numberOfPage+1;
@@ -162,6 +163,7 @@ function initComments(page) {
  * Adds submit event to the add comment form
  */
  add_comment_form.addEventListener('submit',(event) => {
+    console.log('submit');
     event.preventDefault();
     const pseudo = add_comment_form.elements.pseudo.value;
     const comment = add_comment_form.elements.comment.value;
@@ -176,11 +178,13 @@ function initComments(page) {
                     function (obj) {
                         if ('error' in obj) {
                             console.log(obj.error);
+                        } else {
+                            initTicket();
+                            initComments(0);
                         }
                     }
                 )
-                initTicket();
-                initComments(0);
+                
             }
         }
     )

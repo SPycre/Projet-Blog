@@ -20,8 +20,7 @@
         if ($_FILES['addImage']['size'] != 0) {
             move_uploaded_file($_FILES['addImage']['tmp_name'], '../../../Images/ticket_image/' . $item -> id . '.jpg');
             $item -> image = $item -> id . '.jpg';
-            var_dump($item -> image);
-            if ($item -> updateTicket()) {
+            if ($item -> addImage()) {
                 $result['result'] = TRUE;
             } else {
                 $result['result'] = FALSE;

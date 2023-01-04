@@ -31,9 +31,9 @@
 							<label for="content">Contenu</label>
 							<textarea class="input" name="content" rows="7" cols="30"></textarea>
 						</div>
-						<span>
+						<span id="add-image-span">
 							<input type="file" name="addImage" value="Ajouter une image">
-							<input type="button" name="DelImage" value="Supprimer une image">
+							<button id="DelImage">Supprimer une image</button>
 						</span>
 						<div>
 							<input type="submit" name="submit">

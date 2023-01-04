@@ -9,6 +9,10 @@ body {
     color:white;
 }
 
+.section-box {
+    border-radius: 7px;
+}
+
 #central {
     width: 60%;
     display: flex;
