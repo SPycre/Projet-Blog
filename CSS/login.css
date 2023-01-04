@@ -1,6 +1,10 @@
 
+input::-webkit-input-placeholder { color: #fff;}
+input:-moz-placeholder { color: #fff;}
+input::-moz-placeholder { color: #fff;}
+input:-ms-input-placeholder { color: #fff;}
 
-* {
+main * {
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
@@ -21,9 +25,8 @@ button:hover {
 	cursor: pointer;
 }
 
-#central {
-  width: 100%;
-  min-height: 100vh;
+section#central {
+  min-height: 90vh;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -38,7 +41,6 @@ button:hover {
   background-position: center;
   background-size: cover;
   position: relative;
-  z-index: 1;
 }
 
 #login-box {
