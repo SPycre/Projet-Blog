@@ -153,12 +153,17 @@ function initComments(page) {
                                 }
                             )
                         })
-                        comment.addEventListener('mouseover',() => {
+                        if ( window.screen.availWidth <= 600 ) {
                             trash_bin.style.visibility = "visible";
-                        })
-                        comment.addEventListener('mouseout',() => {
-                            trash_bin.style.visibility = "hidden";
-                        })
+                        } else {
+                            comment.addEventListener('mouseover',() => {
+                                trash_bin.style.visibility = "visible";
+                            })
+                            comment.addEventListener('mouseout',() => {
+                                trash_bin.style.visibility = "hidden";
+                            })
+                        }
+                        
                     });
                 }
             }
