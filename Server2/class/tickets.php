@@ -57,12 +57,22 @@ class Ticket {
     }
     // UPDATE
     public function updateTicket() {
-        $stmt = $this -> conn -> prepare("UPDATE ". $this -> db_table ." SET titre = :title, content = :content, image = :image WHERE id = :id");
+        $stmt = $this -> conn -> prepare("UPDATE ". $this -> db_table ." SET titre = :title, content = :content WHERE id = :id");
 
         $stmt -> bindParam(":title", $this -> title, PDO::PARAM_STR);
         $stmt -> bindParam(":content", $this -> content, PDO::PARAM_STR);
         $stmt -> bindParam(":id", $this -> id, PDO::PARAM_INT);
+
+        $stmt -> execute();
+
+        return $stmt;
+    }
+    //ADD IMAGE
+    public function addImage() {
+        $stmt = $this -> conn -> prepare("UPDATE ". $this -> db_table ." SET image = :image WHERE id = :id");
+
         $stmt -> bindParam(":image", $this -> image, PDO::PARAM_STR);
+        $stmt -> bindParam(":id", $this -> id, PDO::PARAM_INT);
 
         $stmt -> execute();
 
@@ -90,6 +100,13 @@ class Ticket {
     // DELETE
     public function deleteTicket() {
         $stmt = $this -> conn -> prepare("DELETE FROM ". $this -> db_table ." WHERE id = :id");
+
+        $settings = $this -> getTicket();
+        $settings = $settings -> fetch(PDO::FETCH_ASSOC);
+
+        if ($settings['image'] != null) {
+            unlink('../../../Images/ticket_image/' . $settings['image']);
+        }
 
         $stmt -> bindParam(":id", $this -> id, PDO::PARAM_INT);
 

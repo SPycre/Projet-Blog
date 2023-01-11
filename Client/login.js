@@ -1,6 +1,8 @@
 import * as utils from "./utils.js";
 const form = document.querySelector('#login-form');
 
+document.querySelector('#page-title').innerHTML = "Connexion"
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     const username = form.elements.username.value;

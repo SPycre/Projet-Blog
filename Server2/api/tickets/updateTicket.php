@@ -17,13 +17,16 @@
     $item -> id = $data -> id;
     $item -> title = $data -> title;
     $item -> content = $data -> content;
-    $item -> comments = $data -> comments;
+
+    $result = [];
 
     if ($item -> updateTicket()) {
-        echo 'Ticket has been updated';
+        $result['result'] = TRUE;
     } else {
-        echo 'Could not update ticket';
+        $result['result'] = FALSE;
     }
+
+    echo json_encode($result);
 
     
 

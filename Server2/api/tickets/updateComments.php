@@ -17,9 +17,12 @@
     $item -> id = $data -> id;
     
     $rslt = $item -> updateComments();
+    $result = [];
 
     if ($rslt) {
-        echo $rslt->queryString;
+        $result['result'] = $rslt->queryString;
     } else {
-        echo 'Could not update ticket';
+        $result['result'] = "No record found";
     }
+    
+    echo json_encode($result);
