@@ -29,3 +29,9 @@ footer{
     bottom: 0;
     margin: auto;
 }
+
+@media (max-width:600px) {
+    #central {
+        width: 100%;
+    }
+}

@@ -4,6 +4,7 @@
         <title>Projet de Blog</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script type="module" src="Client/options.js" defer></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <link href="CSS/header.css" rel="stylesheet"/>
         <link href="CSS/options.css" rel="stylesheet"/>

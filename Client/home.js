@@ -23,6 +23,10 @@ let lastPageNumber = 1;
 
 document.querySelector('#page-title').innerHTML = "Accueil"
 
+if ( window.screen.availWidth <= 600 ) {
+    document.querySelector("#liste-billets").style.backgroundColor = "transparent";
+}
+
 /**
  * Display a page of selectable tickets on the home page
  * @param {int} page Page number to display on the home page

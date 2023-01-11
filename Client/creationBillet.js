@@ -3,6 +3,10 @@ const add_ticket_form = document.querySelector('#add-ticket-form');
 const remove_image = document.querySelector('#DelImage');
 const ticket_id = new URLSearchParams(window.location.search).get('id');
 
+if ( window.screen.availWidth <= 600 ) {
+    document.querySelector("#form-card").style.backgroundColor = "transparent";
+}
+
 if (ticket_id == null) {
     document.querySelector('#page-title').innerHTML = "Création d'un billet"
 } else {

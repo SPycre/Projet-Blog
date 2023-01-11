@@ -27,6 +27,10 @@ let lastPageNumber = 1;
 
 document.querySelector('#page-title').innerHTML = "Billet"
 
+if ( window.screen.availWidth <= 600 ) {
+    document.querySelector("#ticket").style.backgroundColor = "transparent";
+}
+
 /**
  * Display tickets details
  */
@@ -138,10 +142,13 @@ function initComments(page) {
                                             function (obj) {
                                                 if ('error' in obj) {
                                                     console.log(obj.error);
+                                                } else {
+                                                    initTicket();
+                                                    initComments(0);
                                                 }
                                             }
                                         )
-                                        initComments(numberOfPage);
+                                        
                                     }
                                 }
                             )

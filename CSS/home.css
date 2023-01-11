@@ -81,3 +81,15 @@
     margin-top: 5px;
     color: gray;
 }
+
+@media (max-width:600px) {
+    #liste-billets {
+        margin: 0px;
+        border-radius: 0px;
+        padding: 10px 10px;
+        background: transparent;
+    }
+    #page-selector {
+        margin: 0px;
+    }
+}

@@ -4,7 +4,7 @@
 	<head>
 		<title>Projet de Blog</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script type="module" src="Client/creationBillet.js" defer></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 		<link href="CSS/header.css" rel="stylesheet"/>
 		<link href="CSS/main.css" rel="stylesheet"/>
@@ -18,6 +18,7 @@
 	</header>
 
 	<main id="main">
+	<script type="module" src="Client/creationBillet.js" defer></script>
 		<section id="central">
 			<section class="section-box" id="form-card">
 					<h3>Crée un billet</h3>
