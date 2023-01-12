@@ -1,9 +1,9 @@
 import * as utils from "./utils.js";
+
 const footer = document.querySelector('footer');
 const header = document.querySelector('header');
 const body = document.querySelector('body');
 const sectionBox = document.querySelectorAll('.section-box')
-
 
 /**
  * Connection or disconnection form
