@@ -30,9 +30,6 @@
     </div>
 
     <div class="PageMention">
-
-        <h1> Politique de confidentialité </h1>
-
         <p>
             <strong> 1. Introduction </strong>
             </br></br>
@@ -40,21 +37,13 @@
         </p>
 
         <p>
-            <strong> 2. Source </strong>
-            </br></br>
-        Ce document a été créé grâce à un modèle de SEQ Legal (seqlegal.com)
-        </p>
-
-        <p>
-            <strong> 3. Collecte d’informations personnelles </strong>
+            <strong> 2. Collecte d’informations personnelles </strong>
             </br></br>
             Les types d’informations personnelles suivants peuvent collectés, stockés et utilisés : </br>
         </p>
 
         <p>
         <ul>
-        <li> Des informations à propos de votre ordinateur, y compris votre adresse IP, votre localisation géographique, le type et la version de votre navigateur, et votre système d’exploitation. </br></li>
-        <li> Des informations sur vos visites et votre utilisation de ce site web y compris la source référente, la durée de la visite, les pages vues, et les chemins de navigation de sites web. </br></li>
         <li> Des informations comme votre nom et votre adresse e-mail, que vous saisissez pour souscrire à nos e-mails et/ou newsletters. </br></li>
         <li> Des informations que vous saisissez quand vous utilisez les services de notre site web.</br></li>
         <li> Des informations générées lors de l’utilisation de notre site, y compris quand, à quelle fréquence et sous quelles circonstances vous l’utilisez. </br></li>
@@ -65,7 +54,7 @@
 
 
         <p>
-            <strong> 4. Utilisation de vos informations personnelles </strong>
+            <strong> 3. Utilisation de vos informations personnelles </strong>
         </br></br>
 
         Les informations personnelles qui nous sont fournies par le biais de notre site web seront utilisées dans les objectifs décrits dans cette politique ou dans les pages du site pertinentes. Nous pouvons utiliser vos informations personnelles pour :
@@ -77,22 +66,12 @@
         Si vous soumettez des informations personnelles sur notre site web dans le but de les publier, nous les publierons et pourrons utiliser ces informations conformément aux autorisations que vous nous accordez.</br></br>
 
         Sans votre consentement explicite, nous ne fournirons pas vos informations personnelles à des tierces parties pour leur marketing direct, ni celui d’autres tierces parties.
-
-        Quand vous laissez un commentaire sur notre site web, les données inscrites dans le formulaire de commentaire, mais aussi votre adresse IP et l’agent utilisateur de votre navigateur sont collectés pour nous aider à la détection des commentaires indésirables.
-
-        Une chaîne anonymisée créée à partir de votre adresse de messagerie (également appelée hash) peut être envoyée au service Gravatar pour vérifier si vous utilisez ce dernier. Les clauses de confidentialité du service Gravatar sont disponibles ici : https://automattic.com/privacy/. Après validation de votre commentaire, votre photo de profil sera visible publiquement à coté de votre commentaire.
-
         Si vous êtes un utilisateur ou une utilisatrice enregistré·e et que vous téléversez des images sur le site web, nous vous conseillons d’éviter de téléverser des images contenant des données EXIF de coordonnées GPS. Les visiteurs de votre site web peuvent télécharger et extraire des données de localisation depuis ces images.
 
         </p>
 
         <p>
-            <strong> 5. Divulgation de vos informations personnelles </strong>
-            </br></br>
-
-        Nous pouvons divulguer vos informations personnelles à n’importe lequel de nos employés, dirigeants, assureurs, conseillers professionnels, agents, fournisseurs, ou sous-traitants dans la mesure où cela est raisonnablement nécessaire aux fins énoncées dans cette politique.
-
-        Nous pouvons divulguer vos informations personnelles à n’importe quel membre de notre groupe d’entreprises (cela signifie nos filiales, notre société holding ultime et toutes ses filiales) dans la mesure où cela est raisonnablement nécessaire aux fins énoncées dans cette politique.
+            <strong> 4. Divulgation de vos informations personnelles </strong>
             </br></br>
             Nous pouvons divulguer vos informations personnelles : </br></br>
 
@@ -106,23 +85,8 @@
         </p>
 
         <p>
-            <strong> 6. Transferts internationaux de données </strong>
+            <strong> 5. Conservation de vos informations personnelles </strong>
             </br></br>
-
-        Les informations que nous collectons peuvent être stockées, traitées et transférées dans tous les pays dans lesquels nous opérons, afin de nous permettre d’utiliser les informations en accord avec cette politique.
-
-        Les informations que nous collectons peuvent être transférées dans les pays suivants, n’ayant pas de lois de protections des données équivalentes à celles en vigueur dans l’espace économique européen : les États-Unis d’Amérique, la Russie, le Japon, la Chine et l’Inde.
-
-        Les informations personnelles que vous publiez sur notre site web ou que vous soumettez à la publication peuvent être disponibles, via internet, dans le monde entier. Nous ne pouvons empêcher l’utilisation, bonne ou mauvaise, de ces informations par des tiers.
-
-        Vous acceptez expressément le transfert d’informations personnelles décrit dans cette Section 6.
-            </p>
-
-        <p>
-            <strong> 7. Conservation de vos informations personnelles </strong>
-            </br></br>
-        Cette Section 7. détaille nos politiques de conservation des données et nos procédures, conçues pour nous aider à nous conformer à nos obligations légales concernant la conservation et la suppression d’informations personnelles. </br>
-
         Les informations personnelles que nous traitons à quelque fin que ce soit ne sont pas conservées plus longtemps que nécessaire à cette fin ou à ces fins. </br></br>
 
         Sans préjudice à l’article, nous supprimerons généralement les données personnelles de ces catégories : </br></br>
@@ -140,7 +104,7 @@
         </p>
 
         <p>
-            <strong>  8. Sécurité de vos informations personnelles </strong>
+            <strong>  6. Sécurité de vos informations personnelles </strong>
             </br></br>
 
         Nous prendrons des précautions techniques et organisationnelles raisonnables pour empêcher la perte, l’abus ou l’altération de vos informations personnelle.
@@ -155,13 +119,13 @@
         </p>
 
         <p>
-            <strong> 9. Amendements </strong>
+            <strong> 7. Amendements </strong>
             </br></br>
         Nous pouvons parfois mettre cette politique à jour en publiant une nouvelle version sur notre site web. Vous devez vérifier cette page régulièrement pour vous assurer de prendre connaissance de tout changement effectué à cette politique. Nous pouvons vous informer des changements effectués à cette politique par courrier électronique ou par le biais du service de messagerie privée de notre site web.
         </p>
 
         <p>
-            <strong> 10. Vos droits </strong>
+            <strong> 8. Vos droits </strong>
             </br></br>
         Vous pouvez nous demander de vous fournir toute information personnelle que nous détenons sur vous ; le transfert de telles informations sera soumis aux conditions suivantes :
 
@@ -172,7 +136,7 @@
         </p>
 
         <br>
-            <strong> 13. Cookies </strong>
+            <strong> 9 Cookies </strong>
             </br></br>
         Notre site web utilise des cookies. Un cookie est un fichier contenant un identifiant (une chaîne de lettres et de chiffres) envoyé par un serveur web vers un navigateur web et stocké par le navigateur. L’identifiant est alors renvoyé au serveur à chaque fois que le navigateur demande une page au serveur. Les cookies peuvent être « persistants » ou « de session » : un cookie persistant est stocké par le navigateur et reste valide jusqu’à sa date d’expiration, à moins d’être supprimé par l’utilisateur avant cette date d’expiration ; quant à un cookie de session, il expire à la fin de la session utilisateur, lors de la fermeture du navigateur. Les cookies ne contiennent en général aucune information permettant d’identifier personnellement un utilisateur, mais les informations personnelles que nous stockons à votre sujet peuvent être liées aux informations stockées dans les cookies et obtenues par les cookies.
             Nous n’utilisons que des cookies de session et des cookies persistants sur notre site web</br>
@@ -183,13 +147,11 @@
 
         Reconnaître un ordinateur lorsqu’un utilisateur consulte le site web</br>
         Suivre les utilisateurs lors de leur navigation sur le site web</br>
-        Activer l’utilisation d’un panier sur le site web</br>
         Améliorer l’utilisation d’un site web</br>
         Analyser l’utilisation du site web</br>
         Administrer le site web</br>
         Empêcher la fraude et améliorer la sécurité du site web</br>
         Personnaliser le site web pour chaque utilisateur</br>
-        Envoyer des publicités ciblées pouvant intéresser certains utilisateurs</br></br>
 
         La plupart des navigateurs vous permettent de refuser ou d’accepter les cookies :</br></br>
 

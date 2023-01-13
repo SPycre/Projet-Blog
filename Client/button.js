@@ -9,3 +9,5 @@ btn.addEventListener('click', () => {
     })
     
 })
+
+document.querySelector('#page-title').innerHTML = "Politique de confidentialité"
