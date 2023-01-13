@@ -14,7 +14,11 @@ if (ticketsPerPage == null) {
  * Number of currently displayed tickets page
  * @type {int}
  */
-let numberOfPage = 0;
+let numberOfPage = utils.getCookie('pageNumber');
+if (numberOfPage == null) {
+    utils.setCookie('pageNumber',0);
+    numberOfPage = 0;
+}
 /**
  * Number of displayable tickets page
  * @type {int}
@@ -37,6 +41,7 @@ function initTickets(page) {
                 ticket_list.querySelectorAll('.billet').forEach(ticketNode => {
                     ticketNode.remove();
                 })
+                utils.setCookie('pageNumber',page);
                 numberOfPage = page;
                 document.querySelector('#page-number').innerHTML = numberOfPage+1;
                 const ticket_template = document.querySelector('#template-billet').content;
@@ -132,9 +137,8 @@ document.querySelectorAll('.page-select').forEach(p_selector => {
     initPageSelector(p_selector);
 })
 
-
 initAdmin();
-initTickets(0);
+initTickets(+utils.getCookie('pageNumber'));
 calculateMaxTicketPage();
 
 

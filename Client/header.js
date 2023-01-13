@@ -22,7 +22,7 @@ switch (colorPage) {
     case 'default' :
     footer.style.backgroundColor = "#79A3FF";
     header.style.backgroundColor = "#79A3FF";
-    body.style.backgroundColor = "#F0F8FF"
+    body.style.backgroundColor = ""
     break;
 
     case 'pink' :

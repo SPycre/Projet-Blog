@@ -3,6 +3,11 @@
     <head>
         <title>Projet de Blog</title>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+          data-cfasync="false"></script>
+        <script  type="module" src="Client/cookieconsent.js" defer></script>
+
         <script type="module" src="Client/home.js" defer></script>
 
         <link href="CSS/header.css" rel="stylesheet"/>
@@ -13,9 +18,6 @@
         rel="stylesheet" type="text/css" />
     </head>
     <body>
-        <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
-          data-cfasync="false"></script>
-        <script  type="module" src="Client/cookieconsent.js" ></script>
         <header>
             <?php include("header.html"); ?>
         </header>
