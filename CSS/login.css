@@ -186,3 +186,13 @@ input:focus + .input-focus::before {
 #login-button:hover{
   background-color: rgb(220, 220, 220);
 }
+
+@media (max-width:600px) {
+  #login-box {
+    width: 100%;
+    border-radius: 0px;
+  }
+  section#central {
+    padding: 0px;
+  }
+}
