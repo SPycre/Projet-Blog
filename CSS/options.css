@@ -1,7 +1,8 @@
 #settings-form {
-    background-color: rgb(235,235,235);
     margin: 30px;
     padding: 20px 30px;
+    display: flex;
+    justify-content: center;
 }
 
 #settings-form form {
@@ -11,8 +12,9 @@
 }
 
 #settings-article {
+    width: 100%;
+    max-width: 500px;
     margin: 10px;
-    background-color: white;
     padding: 15px;
     display: flex;
     flex-direction: column;
@@ -25,6 +27,10 @@
     margin: 7px;
     display: flex;
     flex-direction: row;
+}
+
+form#form {
+    align-items: center;
 }
 
 #settings-article button {
@@ -51,4 +57,35 @@ select {
 
 label{
     padding-right: 5px ;    
+}
+
+#settings-article button {
+    margin-top: 30px;
+}
+
+#settings-article hr {
+    width: 90%;
+    opacity: 0.5;
+}
+
+@media (max-width:600px) {
+    #settings-form {
+        margin: 0px;
+        padding: 0px;
+    }
+    #settings-article {
+        margin: 0px;
+        padding: 10px 0px;
+        font-size: 20px;
+    }
+    form#form>div {
+        margin: 20px 0px;
+    }
+    #settings-article button {
+        width: 100%;
+        font-size: 30px;
+        padding: 10px 0px;
+        margin: 0px;
+        margin-top: 30px;
+    }
 }

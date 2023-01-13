@@ -5,14 +5,15 @@
 }
 
 #add-ticket {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(235, 235, 235);
+    border-radius: 50px;
     font-weight: bold;
     padding: 10px 15px;
     border: 0px;
 }
 
 #add-ticket:hover {
-    background-color: rgb(220, 220, 220);
+    background-color: rgb(220,220,220);
 }
 
 #liste-billets {
@@ -24,7 +25,7 @@
     color: black;
     font-weight: bold;
     background-color: rgb(235,235,235);
-    margin: 10px 40%;
+    margin: 62px 40%;
     padding: 10px;
     display: flex;
     justify-content: space-around;
@@ -37,9 +38,8 @@
     background-color: rgba(0, 0, 0, 0);
 }
 
-.billet {
-    background-color: white;
-    box-shadow: 3px 5px rgb(0 0 0 / 20%);
+hr {
+    opacity: 0.5;
 }
 
 .selector {
@@ -51,7 +51,7 @@
 }
 
 .billet:hover {
-    background-color: rgb(245, 245, 255);
+    background-color: rgb(245,245,245);
 }
 
 .detail-billet {
@@ -63,6 +63,7 @@
 .text-billet {
     display: flex;
     flex-direction: column;
+    width: 80%;
 }
 
 .titre-billet {
@@ -78,6 +79,8 @@
 
 .contenu-billet {
     margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
     color: gray;
 }
 

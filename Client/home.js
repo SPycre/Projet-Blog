@@ -31,6 +31,9 @@ if ( window.screen.availWidth <= 600 ) {
     document.querySelector("#liste-billets").style.backgroundColor = "transparent";
 }
 
+
+
+
 /**
  * Display a page of selectable tickets on the home page
  * @param {int} page Page number to display on the home page
@@ -49,6 +52,7 @@ function initTickets(page) {
                 numberOfPage = page;
                 document.querySelector('#page-number').innerHTML = numberOfPage+1;
                 const ticket_template = document.querySelector('#template-billet').content;
+                let first = true
 
                 obj.result.forEach(billet => {
                     const billetNode = ticket_template.cloneNode(true);
@@ -56,18 +60,41 @@ function initTickets(page) {
                     const title = billetNode.querySelector('.titre-billet');
                     title.innerHTML = billet.titre;
                     const content = billetNode.querySelector('.contenu-billet');
-                    content.innerHTML = billet.content;
+                    let splitter = 200
+                    while (billet.content[splitter] != " " && splitter < billet.content.length) {
+                        splitter++;
+                    }
+                    content.innerHTML = utils.removeTags(billet.content.slice(0,splitter) + (splitter < billet.content.length ? " [...]" : ""),false);
                     const date = billetNode.querySelector('.post-date');
                     date.innerHTML = billet.date;
                     const comments = billetNode.querySelector('.comment-count');
-                    comments.innerHTML = billet.comments+" commentaires";
+                    
+
+                    let colorPage = utils.getCookie('colorPage');
+                    switch (colorPage) {
+                        case "night":
+                            title.style.color = "white";
+                            content.style.color = "rgb(200,200,200)";
+                            date.style.color = "rgb(200,200,200)"
+                            comments.style.color = "rgb(200,200,200)";
+                            break;
+                    }
 
                     const selector = billetNode.querySelector('.selector');
                     selector.addEventListener('click',() => {
                         window.location.href = "billet.php?id="+billet.id;
                     });
-
+                    if (!first) { ticket_list.append(document.createElement('hr')); } else { first = false; }
                     ticket_list.append(billetNode);
+
+                    utils.requeteV2(
+                        '/comments/countComments','GET',{billet_id:billet.id},
+                        function (obj) {
+                            if ( !('error' in obj) ) {
+                                comments.innerHTML = obj.result[0][0] + " commentaires";
+                            }
+                        }
+                    )
 
                 });
 

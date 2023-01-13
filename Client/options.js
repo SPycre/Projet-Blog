@@ -6,6 +6,13 @@ settings_form.elements.ticketsPerPage.value = utils.getCookie("ticketsPerPage");
 settings_form.elements.commentsPerPage.value = utils.getCookie("commentsPerPage");
 settings_form.elements.colorPage.value = utils.getCookie("colorPage");
 
+let colorPage = utils.getCookie('colorPage');
+switch (colorPage) {
+    case "night":
+        document.querySelector('form').style.color = "white";
+        break;
+}
+
 settings_form.addEventListener('submit',(event) => {
     event.preventDefault();
 

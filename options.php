@@ -17,7 +17,7 @@
         </header>
         <main>
             <section id="central">
-                <section class="section-box" id="settings-form">
+                <section id="settings-form">
                     <article id="settings-article">
                         <form id="form">
                             <div>
@@ -28,6 +28,7 @@
                                     <option value="20">20</option>
                                 </select>
                             </div>
+                            <hr>
                             <div>
                                 <label for="commentsPerPage">Commentaires par page : </label>
                                 <select name='commentsPerPage'>
@@ -36,6 +37,7 @@
                                     <option value="20">20</option>
                                 </select> 
                             </div>
+                            <hr>
                             <div>
                                 <label for="colorPage"> Couleur du site : </label>
                                 <select name='colorPage'>

@@ -75,3 +75,16 @@ export function getCookie(name) {
     });
     return result;
 }
+
+export function removeTags(str, allowed) {
+    if ((str===null) || (str===''))
+        return false;
+    else
+        str = str.toString();
+    if (allowed) {
+        return str.replace( /<(?!\s*\/?strong|br)[^>]+>/g , '');
+    } else {
+        return str.replace( /(<([^>]+)>)/ig, '');
+    }
+    
+}

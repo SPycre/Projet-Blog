@@ -40,11 +40,27 @@ function initTicket() {
         function (obj) {
             if ( !('error' in obj) ) {
                 document.querySelector('#titre-billet').innerHTML = obj.result['titre'];
-                document.querySelector('#contenu-billet').innerHTML = obj.result['content'];
+                document.querySelector('#contenu-billet').innerHTML = utils.removeTags(obj.result['content'],true);
                 if (obj.result['image'] != null) {
                     ticket_img.innerHTML = "<img src='./Images/ticket_image/"+obj.result['image']+"' alt='Image du billet'/>";
                 }
-                lastPageNumber = Math.ceil(obj.result['comments']/commentsPerPage) -1;
+                let colorPage = utils.getCookie('colorPage');
+                    switch (colorPage) {
+                        case "night":
+                            document.querySelector('#titre-billet').style.color = "white";
+                            document.querySelector('#subtitle').style.color = "white";
+                            document.querySelector('#comment-pseudo').style.color = "white";
+                            document.querySelector('#contenu-billet').style.color = "rgb(200,200,200)";
+                            break;
+                    }
+                utils.requeteV2(
+                    '/comments/countComments','GET',{billet_id:ticket_id},
+                    function (obj) {
+                        if ( !('error' in obj) ) {
+                            lastPageNumber = Math.ceil(obj.result[0][0]/commentsPerPage) -1;
+                        }
+                    }
+                )
             } else {
                 console.log(obj.error);
             }
@@ -62,7 +78,6 @@ function initComments(page) {
         '/comments/getComments','GET',{billet_id:ticket_id,page:page*commentsPerPage,count:commentsPerPage},
         function (obj) {
             if ( !('error' in obj) ) {
-                console.log(obj.result);
                 comment_list.innerHTML = "";
                 numberOfPage = page;
                 document.querySelector('#page-number').innerHTML = numberOfPage+1;
@@ -73,15 +88,26 @@ function initComments(page) {
                 const comment_template = document.querySelector('#template-comment').content;
 
                 obj.result.forEach(comment => {
-                    const commentNode = comment_template.cloneNode(true).querySelector('.comment-article');
-                    commentNode.setAttribute("id",comment.id)
+                    const commentNode = comment_template.cloneNode(true);
+                    
+                    const commendArticle = commentNode.querySelector('.comment-article');
+                    commendArticle.setAttribute("id",comment.id)
 
-                    const pseudo = commentNode.querySelector('.pseudo-comment');
+                    const pseudo = commendArticle.querySelector('.pseudo-comment');
                     pseudo.innerHTML = comment.pseudo;
-                    const contenu = commentNode.querySelector('.contenu-comment');
+                    const contenu = commendArticle.querySelector('.contenu-comment');
                     contenu.innerHTML = comment.commentaire;
-                    const date = commentNode.querySelector('.date-comment');
+                    const date = commendArticle.querySelector('.date-comment');
                     date.innerHTML = comment.date;
+
+                    let colorPage = utils.getCookie('colorPage');
+                    switch (colorPage) {
+                        case "night":
+                            pseudo.style.color = "white";
+                            contenu.style.color = "rgb(200,200,200)";
+                            date.style.color = "rgb(200,200,200)";
+                            break;
+                    }
 
                     comment_list.append(commentNode);
                 });
@@ -137,18 +163,8 @@ function initComments(page) {
                                     if ('error' in obj) {
                                         console.log(obj.error);
                                     } else {
-                                        utils.requeteV2(
-                                            '/tickets/updateComments','PATCH',{id:ticket_id},
-                                            function (obj) {
-                                                if ('error' in obj) {
-                                                    console.log(obj.error);
-                                                } else {
-                                                    initTicket();
-                                                    initComments(0);
-                                                }
-                                            }
-                                        )
-                                        
+                                        initTicket();
+                                        initComments(0);
                                     }
                                 }
                             )
@@ -175,7 +191,6 @@ function initComments(page) {
  * Adds submit event to the add comment form
  */
  add_comment_form.addEventListener('submit',(event) => {
-    console.log('submit');
     event.preventDefault();
     const pseudo = add_comment_form.elements.pseudo.value;
     const comment = add_comment_form.elements.comment.value;
@@ -185,18 +200,8 @@ function initComments(page) {
             if ('error' in obj) {
                 console.log(obj.error);
             } else {
-                utils.requeteV2(
-                    '/tickets/updateComments','PATCH',{id:ticket_id},
-                    function (obj) {
-                        if ('error' in obj) {
-                            console.log(obj.error);
-                        } else {
-                            initTicket();
-                            initComments(0);
-                        }
-                    }
-                )
-                
+                initTicket();
+                initComments(0);
             }
         }
     )

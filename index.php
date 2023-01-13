@@ -26,7 +26,7 @@
             <script type="module" src="Client/home.js" defer></script>
             <section id="central">
                 <template id="template-billet">
-                    <article class="billet">
+                    <article class="billet textcolor">
                         <div class="selector">
                             <div class="text-billet">
                                 <span class="titre-billet">Titre</span>

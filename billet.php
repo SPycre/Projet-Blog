@@ -23,7 +23,7 @@
             <script type="module" src="Client/billet.js" defer></script>
             <section id="central">
                 
-                <section class="section-box" id="ticket">
+                <section id="ticket">
 
                     <article id="billet-article">
                         <div id="text-billet">
@@ -34,9 +34,10 @@
                                     <img src="Images/edit.png" id="edit-billet">
                                 </div>
                             </div>
-                            <span id="contenu-billet">Content</span>
+                            <hr>
                             <div id="billet-img">
                             </div>
+                            <span id="contenu-billet">Content</span>
                         </div>
 
                         <div id="detail-billet">
@@ -47,6 +48,7 @@
                 </section>
 
                 <template id="template-comment">
+                    <hr>
                     <article class="comment-article">
                         <div class="text-comment">
                             <span class="pseudo-comment">Pseudo</span>
@@ -57,11 +59,12 @@
                             <img src="Images/trash_bin.png" class="trash-comment">
                         </div>
                     </article>
+                    <div>
                 </template>
 
                 <span id="subtitle">Commentaires</span>
 
-                <section class="section-box" id = "list-comment">
+                <section id = "list-comment">
                     /!\ Unable to load content /!\
                 </section>
 

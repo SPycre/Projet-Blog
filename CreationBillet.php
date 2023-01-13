@@ -30,7 +30,7 @@
 						</div>
 						<div>
 							<label for="content">Contenu</label>
-							<textarea class="input" name="content" rows="7" cols="30"></textarea>
+							<textarea class="input" maxlength="5000" name="content" rows="7" cols="30"></textarea>
 						</div>
 						<span id="add-image-span">
 							<input type="file" name="addImage" value="Ajouter une image">

@@ -22,13 +22,11 @@ switch (colorPage) {
     case 'default' :
     footer.style.backgroundColor = "#79A3FF";
     header.style.backgroundColor = "#79A3FF";
-    body.style.backgroundColor = ""
     break;
 
     case 'pink' :
     footer.style.backgroundColor = "#FF69B4"
     header.style.backgroundColor = "#FF69B4"
-    body.style.backgroundColor = "#FFE4E1"
     sectionBox.forEach(box => {
         box.style.backgroundColor = "#FF69B4"
     });
@@ -46,7 +44,6 @@ switch (colorPage) {
     case 'green' :
     footer.style.backgroundColor = "#87E990"
     header.style.backgroundColor = "#87E990"
-    body.style.backgroundColor = "#BDECB6"
     sectionBox.forEach(box => {
         box.style.backgroundColor = "#87E990"
     });
@@ -55,7 +52,6 @@ switch (colorPage) {
     case 'purple' :
     footer.style.backgroundColor = "#9683EC"
     header.style.backgroundColor = "#9683EC"
-    body.style.backgroundColor = "#E8EBFF"
     sectionBox.forEach(box => {
         box.style.backgroundColor = "#9683EC"
     });
@@ -64,7 +60,6 @@ switch (colorPage) {
     case 'coquelicot' :
     footer.style.backgroundColor = "#C60800"
     header.style.backgroundColor = "#C60800"
-    body.style.backgroundColor = "#E9967A"
     sectionBox.forEach(box => {
         box.style.backgroundColor = "#C60800"
     });
@@ -73,7 +68,6 @@ switch (colorPage) {
     case 'gold' :
     footer.style.backgroundColor = "#DAA520"
     header.style.backgroundColor = "#DAA520"
-    body.style.backgroundColor = "#F0E68C"
     sectionBox.forEach(box => {
         box.style.backgroundColor = "#DAA520"
     });

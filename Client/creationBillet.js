@@ -26,6 +26,14 @@ if (ticket_id == null) {
 
 }
 
+let colorPage = utils.getCookie('colorPage');
+switch (colorPage) {
+    case "night":
+        document.querySelector('h3').style.color = "white";
+        document.querySelector('form').style.color = "white";
+        break;
+}
+
 remove_image.addEventListener('click', (e) => {
     e.preventDefault();
     add_ticket_form.elements.addImage.value = null;

@@ -11,7 +11,6 @@ class Ticket {
     public $title;
     public $content;
     public $date;
-    public $comments; 
     public $image;
 
     public function __construct($db) {
@@ -72,25 +71,6 @@ class Ticket {
         $stmt = $this -> conn -> prepare("UPDATE ". $this -> db_table ." SET image = :image WHERE id = :id");
 
         $stmt -> bindParam(":image", $this -> image, PDO::PARAM_STR);
-        $stmt -> bindParam(":id", $this -> id, PDO::PARAM_INT);
-
-        $stmt -> execute();
-
-        return $stmt;
-    }
-    //UPDATE COMMENTS
-    public function updateComments() {
-        $stmt = $this -> conn -> prepare('SELECT COUNT(*) FROM commentaire WHERE billet_id = :billet_id');
-
-        $stmt -> bindParam(":billet_id", $this -> id, PDO::PARAM_INT);
-
-        $stmt -> execute();
-
-        $this -> comments = $stmt -> fetchColumn();
-
-        $stmt = $this -> conn -> prepare("UPDATE ". $this -> db_table ." SET comments = :comments WHERE id = :id");
-
-        $stmt -> bindParam(":comments", $this -> comments, PDO::PARAM_INT);
         $stmt -> bindParam(":id", $this -> id, PDO::PARAM_INT);
 
         $stmt -> execute();
