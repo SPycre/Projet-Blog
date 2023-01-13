@@ -48,6 +48,9 @@ function initTickets(page) {
                 ticket_list.querySelectorAll('.billet').forEach(ticketNode => {
                     ticketNode.remove();
                 })
+                ticket_list.querySelectorAll('hr').forEach(hrNode => {
+                    hrNode.remove();
+                })
                 utils.setCookie('pageNumber',page);
                 numberOfPage = page;
                 document.querySelector('#page-number').innerHTML = numberOfPage+1;
