@@ -23,6 +23,19 @@
     color: black;
 }
 
+footer {
+    background-color: rgb(121, 163, 255);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-family: Arial;
+    position: fixed;
+    font-size:1vw;
+    bottom: 0;
+    width: 100%;
+}
+
 #settings-article form > div {
     margin: 7px;
     display: flex;

@@ -75,3 +75,36 @@ add_ticket_form.addEventListener('submit',(event) => {
         )
     }
 })
+
+function settags(tag) {
+    const textarea = document.querySelector("#edit-text")
+    if (textarea.selectionStart === undefined) {
+
+    } else {
+        let newText = textarea.value.substring(0,textarea.selectionStart) + '<' + tag + '>' + textarea.value.substring(textarea.selectionStart, textarea.selectionEnd) + '</' + tag + '>' + textarea.value.substring(textarea.selectionEnd)
+        textarea.value = newText;
+    }
+}
+
+function addtags(tag) {
+    const textarea = document.querySelector("#edit-text")
+    if (textarea.selectionStart === undefined) {
+
+    } else {
+        let newText = textarea.value.substring(0,textarea.selectionStart) + '<' + tag + '>' + textarea.value.substring(textarea.selectionEnd)
+        textarea.value = newText;
+    }
+}
+
+document.querySelector("#bold").addEventListener("click", function () {
+    settags("strong");
+  })
+
+document.querySelector("#italic").addEventListener("click", function () {
+    settags("em");
+  })
+
+document.querySelector("#sautligne").addEventListener("click", function () {
+    addtags("br");
+
+  })

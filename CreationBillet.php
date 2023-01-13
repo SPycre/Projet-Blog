@@ -19,29 +19,43 @@
 
 	<main id="main">
 	<script type="module" src="Client/creationBillet.js" defer></script>
-		<section id="central">
-			<section class="section-box" id="form-card">
-					<h3>Crée un billet</h3>
+			<section id="form-card">
+					<h3>Création d'un billet</h3>
 
 					<form id="add-ticket-form">
 						<div>
 							<label for="title">Titre</label>
 							<input class="input" type="text" name="title">
 						</div>
-						<div>
+						<div >
 							<label for="content">Contenu</label>
-							<textarea class="input" maxlength="5000" name="content" rows="7" cols="30"></textarea>
+							<textarea id="edit-text" class="input" maxlength="5000" name="content" rows="7" cols="30"></textarea>
 						</div>
+
 						<span id="add-image-span">
 							<input type="file" name="addImage" value="Ajouter une image">
-							<button id="DelImage">Supprimer une image</button>
 						</span>
+
+
+						<div id="button-text">
+							<input type='button' value='Italic' id='italic' />
+							<input type='button' value='Gras' id='bold' />
+							<input type='button' value='Saut de ligne' id='sautligne' />
+						</div>
+
+						<div id="button-del">
+						<button id="DelImage">Supprimer l'image</button>
+						</div>
+
+						
 						<div>
 							<input type="submit" name="submit">
 						</div>
 					</form>
 			</section>
-		</section>
+
+			
+
 	</main>
 
 	<footer id="footer">

@@ -100,6 +100,8 @@ hr {
     border: 0px;
 }
 
+
+
 #form-commentaire button {
     color:white;
     font-weight: bold;
@@ -114,6 +116,19 @@ hr {
     outline: none;
     transition-duration:.5s;
     background-color: rgb(220, 220, 220);
+}
+
+footer {
+    background-color: rgb(121, 163, 255);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;
+    font-family: Arial;
+    position: fixed;
+    font-size:1vw;
+    bottom: 0;
+    width: 100%;
 }
 
 #comment-pseudo {

@@ -1,5 +1,4 @@
 #form-card form{
-    padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,7 +31,7 @@
 }
 
 #form-card {
-  background-color: rgb(235,235,235);
+  background-color: transparent;
   margin: 30px;
   padding: 10px;
   color: black;
@@ -40,12 +39,59 @@
   font-weight: bold;
 }
 
-@media (max-width:600px) {
-  #form-card {
-    margin: 0px;
-    border-radius: 0px;
-  }
-  #add-ticket-form>div, .input {
-    width: 90%;
-  }
+#central{
+  color:black;
+  align-items: center;
 }
+
+div#button-text{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 0px;
+  align-items: center;
+}
+
+div#button-del{
+  margin-bottom: 10px;
+  padding-top:0px;
+}
+
+footer {
+  background-color: rgb(121, 163, 255);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: aliceblue;
+  font-family: Arial;
+  position: fixed;
+  font-size:1vw;
+  bottom: 0;
+  width: 100%;
+}
+
+input[type=button] {
+  border: solid 1px black;
+  cursor:pointer;
+}
+
+button{
+  border: solid 1px black;
+  cursor:pointer;
+}
+
+input[type=input] {
+  border: solid 1px black;
+  cursor:pointer;
+}
+
+input[type=submit] {
+  padding:5px 15px; 
+  background:rgb(121, 153, 255); 
+  border:0 none;
+  cursor:pointer;
+}
+
+label{
+  margin: 10px;
+}
+
