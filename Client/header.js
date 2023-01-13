@@ -1,9 +1,9 @@
 import * as utils from "./utils.js";
+
 const footer = document.querySelector('footer');
 const header = document.querySelector('header');
 const body = document.querySelector('body');
 const sectionBox = document.querySelectorAll('.section-box')
-
 
 /**
  * Connection or disconnection form
@@ -22,7 +22,7 @@ switch (colorPage) {
     case 'default' :
     footer.style.backgroundColor = "#79A3FF";
     header.style.backgroundColor = "#79A3FF";
-    body.style.backgroundColor = "#F0F8FF"
+    body.style.backgroundColor = ""
     break;
 
     case 'pink' :
