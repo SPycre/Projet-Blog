@@ -25,6 +25,19 @@ button:hover {
 	cursor: pointer;
 }
 
+footer {
+  background-color: rgb(121, 163, 255);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: aliceblue;
+  font-family: Arial;
+  position: fixed;
+  font-size:1vw;
+  bottom: 0;
+  width: 100%;
+}
+
 section#central {
   min-height: 90vh;
   display: -webkit-box;
