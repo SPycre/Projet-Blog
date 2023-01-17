@@ -1,4 +1,4 @@
-p{
+footer p{
     color:rgb(255, 255, 255);
 }
 
@@ -35,6 +35,6 @@ a:hover{
     transition-duration: 0.3s;
 }
 
-h1{
+footer h1{
     margin: 10px;
 }

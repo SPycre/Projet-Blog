@@ -23,25 +23,22 @@
 					<h3>Création d'un billet</h3>
 
 					<form id="add-ticket-form">
-						<div>
+						<div class="form-div">
 							<label for="title">Titre</label>
 							<input class="input" type="text" name="title">
 						</div>
-						<div >
-							<label for="content">Contenu</label>
-							<textarea id="edit-text" class="input" maxlength="5000" name="content" rows="7" cols="30"></textarea>
+						<div id="text-area-holder">
+							<div class="form-div">
+								<label for="content">Contenu</label>
+								<textarea id="edit-text" class="input" maxlength="5000" name="content" rows="7" cols="30"></textarea>
+							</div>
+							<div class="form-div" id="preview">
+							</div>
 						</div>
 
 						<span id="add-image-span">
 							<input type="file" name="addImage" value="Ajouter une image">
 						</span>
-
-
-						<div id="button-text">
-							<input type='button' value='Italic' id='italic' />
-							<input type='button' value='Gras' id='bold' />
-							<input type='button' value='Saut de ligne' id='sautligne' />
-						</div>
 
 						<div id="button-del">
 						<button id="DelImage">Supprimer l'image</button>

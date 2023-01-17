@@ -20,6 +20,8 @@ if (ticket_id == null) {
             } else {
                 add_ticket_form.elements.title.value = obj.result['titre']
                 add_ticket_form.elements.content.value = obj.result['content']
+                let converter = new showdown.Converter();
+                document.querySelector('#preview').innerHTML = converter.makeHtml(utils.removeTags(obj.result['content']));
             }
         }
     )
@@ -74,37 +76,9 @@ add_ticket_form.addEventListener('submit',(event) => {
             }
         )
     }
+});
+
+document.querySelector('textarea').addEventListener('input', (e) => {
+    let converter = new showdown.Converter();
+    document.querySelector('#preview').innerHTML = converter.makeHtml(utils.removeTags(e.target.value));
 })
-
-function settags(tag) {
-    const textarea = document.querySelector("#edit-text")
-    if (textarea.selectionStart === undefined) {
-
-    } else {
-        let newText = textarea.value.substring(0,textarea.selectionStart) + '<' + tag + '>' + textarea.value.substring(textarea.selectionStart, textarea.selectionEnd) + '</' + tag + '>' + textarea.value.substring(textarea.selectionEnd)
-        textarea.value = newText;
-    }
-}
-
-function addtags(tag) {
-    const textarea = document.querySelector("#edit-text")
-    if (textarea.selectionStart === undefined) {
-
-    } else {
-        let newText = textarea.value.substring(0,textarea.selectionStart) + '<' + tag + '>' + textarea.value.substring(textarea.selectionEnd)
-        textarea.value = newText;
-    }
-}
-
-document.querySelector("#bold").addEventListener("click", function () {
-    settags("strong");
-  })
-
-document.querySelector("#italic").addEventListener("click", function () {
-    settags("em");
-  })
-
-document.querySelector("#sautligne").addEventListener("click", function () {
-    addtags("br");
-
-  })

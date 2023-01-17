@@ -76,15 +76,9 @@ export function getCookie(name) {
     return result;
 }
 
-export function removeTags(str, allowed) {
+export function removeTags(str) {
     if ((str===null) || (str===''))
-        return false;
+        return '';
     else
-        str = str.toString();
-    if (allowed) {
-        return str.replace( /<(?!\s*\/?strong|br)[^>]+>/g , '');
-    } else {
         return str.replace( /(<([^>]+)>)/ig, '');
-    }
-    
 }

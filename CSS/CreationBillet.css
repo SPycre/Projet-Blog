@@ -1,10 +1,22 @@
+#text-area-holder{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#preview {
+  font-weight: normal;
+  color: gray;
+}
+
 #form-card form{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#form-card div{
+#form-card .form-div{
     padding: 10px;
     display: flex;
     align-items: center;
@@ -17,6 +29,7 @@
 
 #form-card .input {
   transition-duration: .5s;
+  background-color: rgb(255, 255, 255);
   padding: 7px 15px;
   margin-left: 5px;
   border: 0px;

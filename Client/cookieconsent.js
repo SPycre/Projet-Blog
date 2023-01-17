@@ -39,14 +39,10 @@ window.cookieconsent.initialise({
   
   function disableCookies() {
     var cookies = document.cookie.split(";");
-    console.log("cookies : ",cookies);
     for (var i = 0; i < cookies.length; i++) {
         var cookie = cookies[i];
         var eqPos = cookie.indexOf("=");
         var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
-        console.log("cookie : ",cookie);
-        console.log("eqPos : ",eqPos);
-        console.log("name : ",name);
         if (!name.includes("cookieconsent_status") && !name.includes("PHPSESSID")){
           if(name.includes("ticketsPerPage")){
             utils.setCookie(name,5);
@@ -57,7 +53,6 @@ window.cookieconsent.initialise({
           else{
             utils.setCookie(name,""); 
           }
-          console.log("document.cookie : ",document.cookie);
         }
       }
   }

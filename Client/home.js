@@ -62,12 +62,16 @@ function initTickets(page) {
 
                     const title = billetNode.querySelector('.titre-billet');
                     title.innerHTML = billet.titre;
+
                     const content = billetNode.querySelector('.contenu-billet');
                     let splitter = 200
                     while (billet.content[splitter] != " " && splitter < billet.content.length) {
                         splitter++;
                     }
-                    content.innerHTML = utils.removeTags(billet.content.slice(0,splitter) + (splitter < billet.content.length ? " [...]" : ""),false);
+                    let converter = new showdown.Converter();
+                    const result = utils.removeTags( converter.makeHtml(billet.content.slice(0,splitter) + (splitter < billet.content.length ? " [...]" : "")))
+                    content.innerHTML = result;
+
                     const date = billetNode.querySelector('.post-date');
                     date.innerHTML = billet.date;
                     const comments = billetNode.querySelector('.comment-count');
