@@ -41,8 +41,7 @@ function initTicket() {
             if ( !('error' in obj) ) {
                 document.querySelector('#titre-billet').innerHTML = obj.result['titre'];
                 let converter = new showdown.Converter();
-                console.log(converter.makeHtml(utils.removeTags(obj.result['content'],true)))
-                document.querySelector('#contenu-billet').innerHTML = converter.makeHtml(utils.removeTags(obj.result['content'],true));
+                document.querySelector('#contenu-billet').innerHTML = converter.makeHtml(utils.removeTags(obj.result['content']));
                 if (obj.result['image'] != null) {
                     ticket_img.innerHTML = "<img src='./Images/ticket_image/"+obj.result['image']+"' alt='Image du billet'/>";
                 }

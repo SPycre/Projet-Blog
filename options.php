@@ -19,7 +19,8 @@
             <section id="central">
                 <section id="settings-form">
                     <article id="settings-article">
-                        <form id="form">
+                        <form id="form-settings">
+                        <h2> Options du blog </h2>
                             <div>
                                 <label for="ticketsPerPage">Billets par page : </label>
                                 <select name='ticketsPerPage'>
@@ -51,6 +52,29 @@
                                     
                                     
                                 </select>
+                            </div>
+                            <button type='submit'>Sauvegarder</button>
+                        </form>
+                        <form id="form-account">
+                            <h2> Options du compte </h2>
+                            <input type="hidden" name="username0">
+                            <div>
+                                <label for="username">Nom d'utilisateur : </label>
+                                <input type="text" name="username">
+                            </div>
+                            <hr>
+                            <div>
+                                <label for="password">Nouveau mot de passe : </label>
+                                <input type="password" name="password" required>
+                            </div>
+                            <div>
+                                <label for="password2">Confirmer le mot de passe : </label>
+                                <input type="password" name="password2" required>
+                            </div>
+                            <hr>
+                            <div id="current-password">
+                                <label for="password3">Mot de passe actuel : </label>
+                                <input type="password" name="password3">
                             </div>
                             <button type='submit'>Sauvegarder</button>
                         </form>

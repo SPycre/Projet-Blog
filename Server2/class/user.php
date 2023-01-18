@@ -34,4 +34,14 @@ class User {
         return $stmt;
     }
 
+    public function updateUser() {
+        $stmt = $this -> conn -> prepare('UPDATE '.$this -> db_table.' SET username = :username, password = :password WHERE id = :id');
+
+        $stmt -> bindParam(":username", $this -> username, PDO::PARAM_STR);
+        $stmt -> bindParam(":password", $this -> password, PDO::PARAM_STR);
+        $stmt -> bindParam(":id", $this -> id, PDO::PARAM_INT);
+
+        $stmt -> execute();
+    }
+
 }
