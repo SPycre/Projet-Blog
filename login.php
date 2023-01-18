@@ -7,7 +7,7 @@
 	<script type="module" src="Client/login.js" defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
-	<link href="css/login.css" rel="stylesheet"/>
+	<link href="CSS/login.css" rel="stylesheet"/>
 	<link href="CSS/header.css" rel="stylesheet"/>
 	<link href="CSS/main.css" rel="stylesheet"/>
 	<link href="CSS/footer.css" rel="stylesheet"/>
