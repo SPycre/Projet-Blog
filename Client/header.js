@@ -19,7 +19,7 @@ document.querySelector('#burger').addEventListener('click',() => {
 
 let colorPage = utils.getCookie('colorPage');
 switch (colorPage) {
-    case 'default' :
+    case 'default' || 'undefined' || null:
     footer.style.backgroundColor = "#79A3FF";
     header.style.backgroundColor = "#79A3FF";
     break;

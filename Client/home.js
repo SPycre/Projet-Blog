@@ -6,7 +6,7 @@ const ticket_list = document.querySelector('#liste-billets');
  * @type {int}
  */
 let ticketsPerPage = utils.getCookie('ticketsPerPage');
-if (ticketsPerPage == null) {
+if (ticketsPerPage == null || ticketsPerPage == "undefined") {
     utils.setCookie('ticketsPerPage',5);
     ticketsPerPage = 5;
 }
@@ -15,7 +15,7 @@ if (ticketsPerPage == null) {
  * @type {int}
  */
 let numberOfPage = utils.getCookie('pageNumber');
-if (numberOfPage == null) {
+if (numberOfPage == null || numberOfPage == "undefined") {
     utils.setCookie('pageNumber',0);
     numberOfPage = 0;
 }

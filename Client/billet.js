@@ -10,7 +10,7 @@ const ticket_img = document.querySelector('#billet-img');
  * @type {int}
  */
 let commentsPerPage = utils.getCookie('commentsPerPage');
-if (commentsPerPage == null) {
+if (commentsPerPage == null || commentsPerPage == "undefined") {
     utils.setCookie('commentsPerPage',5);
     commentsPerPage = 5;
 }
