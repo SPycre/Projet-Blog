@@ -4,29 +4,33 @@
     header("Content-Type: application/json; charset=UTF-8");
     header("Access-Control-Allow-Methods: PATCH");
 
-    include_once '../../config/database.php';
-    include_once '../../class/tickets.php';
+    if (isset($_SESSION['LOGGED_USER'])) {
 
-    $database = new Database();
-    $db = $database -> getConnection();
+        include_once '../../config/database.php';
+        include_once '../../class/tickets.php';
 
-    $item = new Ticket($db);
+        $database = new Database();
+        $db = $database -> getConnection();
 
-    $data = json_decode(file_get_contents("php://input"));
+        $item = new Ticket($db);
 
-    $item -> id = $data -> id;
-    $item -> title = $data -> title;
-    $item -> content = $data -> content;
+        $data = json_decode(file_get_contents("php://input"));
 
-    $result = [];
+        $item -> id = $data -> id;
+        $item -> title = $data -> title;
+        $item -> content = $data -> content;
 
-    if ($item -> updateTicket()) {
-        $result['result'] = TRUE;
-    } else {
-        $result['result'] = FALSE;
-    }
+        $result = [];
 
-    echo json_encode($result);
+        if ($item -> updateTicket()) {
+            $result['result'] = TRUE;
+        } else {
+            $result['result'] = FALSE;
+        }
+
+        echo json_encode($result);
+
+}
 
     
 

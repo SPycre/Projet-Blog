@@ -28,20 +28,20 @@
 							<input class="input" type="text" name="title">
 						</div>
 						<div id="text-area-holder">
-							<div class="form-div">
-								<label for="content">Contenu</label>
+						<label for="content">Contenu</label>
+							<div class="text-div">
 								<textarea id="edit-text" class="input" maxlength="5000" name="content" rows="7" cols="30"></textarea>
-							</div>
-							<div class="form-div" id="preview">
+								<div id="preview"></div>
 							</div>
 						</div>
 
-						<span id="add-image-span">
-							<input type="file" name="addImage" value="Ajouter une image">
-						</span>
+						<div id="add-image-span">
+							<input type="file" name="addImage" id="addImage" value="Ajouter une image">
+							<label id="addImage-label" for="addImage">Ajouter une image</label>
+						</div>
 
 						<div id="button-del">
-						<button id="DelImage">Supprimer l'image</button>
+							<button id="DelImage">Supprimer l'image</button>
 						</div>
 
 						

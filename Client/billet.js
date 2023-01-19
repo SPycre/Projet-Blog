@@ -138,7 +138,7 @@ function initComments(page) {
 
 
                     edit_ticket.addEventListener('click',() => {
-                        window.location.href = "creationbillet.php?id="+ticket_id;
+                        window.location.href = "creationBillet.php?id="+ticket_id;
                     })
 
                     trash_ticket.addEventListener('click',() => {

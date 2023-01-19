@@ -4,23 +4,27 @@
     header("Content-Type: application/json; charset=UTF-8");
     header("Access-Control-Allow-Methods: DELETE");
 
-    include_once '../../config/database.php';
-    include_once '../../class/tickets.php';
+    if (isset($_SESSION['LOGGED_USER'])) {
 
-    $database = new Database();
-    $db = $database -> getConnection();
+        include_once '../../config/database.php';
+        include_once '../../class/tickets.php';
 
-    $item = new Ticket($db);
-    $result = [];
+        $database = new Database();
+        $db = $database -> getConnection();
 
-    $data = json_decode(file_get_contents("php://input"));
+        $item = new Ticket($db);
+        $result = [];
 
-    $item -> id = $data -> id;
+        $data = json_decode(file_get_contents("php://input"));
 
-    if ($item -> deleteTicket()) {
-        $result['result'] = 'Ticket has been deleted';
-    } else {
-        $result['result'] =  'Could not delete ticket';
-    }
+        $item -> id = $data -> id;
 
-    echo json_encode($result);
+        if ($item -> deleteTicket()) {
+            $result['result'] = 'Ticket has been deleted';
+        } else {
+            $result['result'] =  'Could not delete ticket';
+        }
+
+        echo json_encode($result);
+
+}

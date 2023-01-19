@@ -4,32 +4,36 @@
     header("Content-Type: application/json; charset=UTF-8");
     header("Access-Control-Allow-Methods: POST");
 
-    include_once '../../config/database.php';
-    include_once '../../class/tickets.php';
+    if (isset($_SESSION['LOGGED_USER'])) {
 
-    $database = new Database();
-    $db = $database -> getConnection();
+        include_once '../../config/database.php';
+        include_once '../../class/tickets.php';
 
-    $item = new Ticket($db);
+        $database = new Database();
+        $db = $database -> getConnection();
 
-    $item -> title = $_POST['title'];
-    $item -> content = $_POST['content'];
-    $result = [];
+        $item = new Ticket($db);
 
-    if ($item -> createTicket()) {
-        if ($_FILES['addImage']['size'] != 0) {
-            move_uploaded_file($_FILES['addImage']['tmp_name'], '../../../Images/ticket_image/' . $item -> id . '.jpg');
-            $item -> image = $item -> id . '.jpg';
-            if ($item -> addImage()) {
-                $result['result'] = TRUE;
+        $item -> title = $_POST['title'];
+        $item -> content = $_POST['content'];
+        $result = [];
+
+        if ($item -> createTicket()) {
+            if ($_FILES['addImage']['size'] != 0) {
+                move_uploaded_file($_FILES['addImage']['tmp_name'], '../../../Images/ticket_image/' . $item -> id . '.jpg');
+                $item -> image = $item -> id . '.jpg';
+                if ($item -> addImage()) {
+                    $result['result'] = TRUE;
+                } else {
+                    $result['result'] = FALSE;
+                }
             } else {
-                $result['result'] = FALSE;
+                $result['result'] = TRUE;
             }
         } else {
-            $result['result'] = TRUE;
+            $result['result'] = FALSE;
         }
-    } else {
-        $result['result'] = FALSE;
-    }
 
-    echo json_encode($result);
+        echo json_encode($result);
+
+}

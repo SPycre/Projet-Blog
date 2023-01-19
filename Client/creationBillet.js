@@ -2,6 +2,7 @@ import * as utils from "./utils.js";
 const add_ticket_form = document.querySelector('#add-ticket-form');
 const remove_image = document.querySelector('#DelImage');
 const ticket_id = new URLSearchParams(window.location.search).get('id');
+const image_label = document.querySelector('#addImage-label');
 
 if ( window.screen.availWidth <= 600 ) {
     document.querySelector("#form-card").style.backgroundColor = "transparent";
@@ -39,7 +40,12 @@ switch (colorPage) {
 remove_image.addEventListener('click', (e) => {
     e.preventDefault();
     add_ticket_form.elements.addImage.value = null;
+    image_label.innerHTML = "Ajouter une image";
 });
+
+add_ticket_form.elements.addImage.addEventListener('change', (e) => {
+    image_label.innerHTML = e.target.files[0].name.slice(0,20) + (e.target.files[0].name.length > 20 ? "..." : "");
+})
 
 add_ticket_form.addEventListener('submit',(event) => {
     event.preventDefault();

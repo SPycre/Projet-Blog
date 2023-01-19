@@ -1,12 +1,20 @@
 #text-area-holder{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
+#add-image-span, #button-del{
+  display: flex;
+  width: 50%;
+  font-size: small;
+  margin: 0px;
+}
+
 #preview {
   font-weight: normal;
+  padding: 10px;
   color: gray;
 }
 
@@ -21,6 +29,13 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+}
+
+#form-card .text-div {
+  flex-direction: row;
+  display: flex;
+  padding: 10px;
+  align-items: center;
 }
 
 #form-card textarea {
@@ -44,6 +59,7 @@
 
 #form-card {
   background-color: transparent;
+  width: 60%;
   margin: 30px;
   padding: 10px;
   color: black;
@@ -81,24 +97,35 @@ footer {
   width: 100%;
 }
 
-input[type=button] {
-  border: solid 1px black;
+input[type=file] {
+  opacity: 0;
+  width: 0.1px;
+	height: 0.1px;
+}
+
+label[for=addImage] {
+  padding:5px 15px;
+  font-weight: bold;
+  background:rgb(235,235,235); 
+  margin: 0px;
+  width: 100%;
+  border:0 none;
   cursor:pointer;
 }
 
 button{
-  border: solid 1px black;
-  cursor:pointer;
-}
-
-input[type=input] {
-  border: solid 1px black;
+  padding:5px 15px; 
+  font-weight: bold;
+  width: 100%;
+  background:rgb(235,235,235); 
+  border:0 none;
   cursor:pointer;
 }
 
 input[type=submit] {
-  padding:5px 15px; 
-  background:rgb(121, 153, 255); 
+  padding:7px 20px; 
+  font-weight: bold;
+  background:rgb(235,235,235); 
   border:0 none;
   cursor:pointer;
 }
