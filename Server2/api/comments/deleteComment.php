@@ -4,6 +4,10 @@
     header("Content-Type: application/json; charset=UTF-8");
     header("Access-Control-Allow-Methods: DELETE");
 
+    if (session_status() != PHP_SESSION_ACTIVE) {
+        session_start();
+    }
+
     if (isset($_SESSION['LOGGED_USER'])) {
 
         include_once '../../config/database.php';
@@ -20,9 +24,9 @@
         $item -> id = intval($data -> id);
 
         if ($item -> deleteComment()) {
-            $result['result'] = 'Ticket has been deleted';
+            $result['result'] = true;
         } else {
-            $result['result'] = 'Could not delete ticket';
+            $result['result'] = false;
         }
 
         echo json_encode($result);
